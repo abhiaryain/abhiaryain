@@ -17,7 +17,6 @@ export function Badges({
   const Icon = icons[icon];
   return (
     <Badge
-      asChild
       variant={"outline"}
       className={cn(
         "group",
@@ -33,9 +32,10 @@ export function Badges({
         href={url}
         target="_blank"
         rel="noopener"
+        className="flex items-center gap-1"
         onClick={() => track(`${name}_badge_clicked`)}
       >
-        <Icon className="mr-0.5" /> {name}
+        <Icon className="mr-0.5 size-3" /> {name}
       </Link>
     </Badge>
   );
