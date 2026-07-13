@@ -1,9 +1,8 @@
-import { Button } from "@/components/ui/button";
-
+import { Header } from "@/components/header/header";
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <Button>Hello</Button>
+    <div className="flex flex-col gap-8">
+      <Header />
     </div>
   );
 }

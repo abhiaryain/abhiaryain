@@ -2,6 +2,13 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider/theme-provider";
+import { Container } from "@/components/container/container";
+import { OneKo } from "@/components/oneko/oneko";
+import { Fade } from "@/components/abhiarya-ui/fade";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { cn } from "@/lib/utils";
+import { TooltipProvider } from "@/components/ui/tooltip";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,13 +31,28 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      suppressHydrationWarning
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">
-        <ThemeProvider>{children}</ThemeProvider>
+    <html lang="en" suppressHydrationWarning>
+      <body
+        className={cn(
+          `${geistSans.variable} ${geistMono.variable} antialiased`,
+          "min-h-screen bg-background font-sans",
+        )}
+      >
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <TooltipProvider>
+            <Container>
+              <Fade>{children}</Fade>
+            </Container>
+          </TooltipProvider>
+          <OneKo />
+        </ThemeProvider>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
