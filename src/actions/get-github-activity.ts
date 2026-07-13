@@ -1,6 +1,6 @@
 import "server-only";
 
-import type { Activity } from "react-activity-calendar";
+import type { Activity } from "@/components/kibo-ui/contribution-graph";
 import { env } from "@/config/server-env";
 import { PERSONAL_DATA } from "@/data/personal";
 import type { ActionsReturn, Week } from "@/types";
