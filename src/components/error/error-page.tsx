@@ -33,7 +33,6 @@ export function ErrorPage({ status, message }: ErrorProps) {
       </FadeItem>
       <FadeItem>
         <Button
-          asChild
           className={cn(
             "bg-accent hover:bg-accent/80",
             "text-accent-foreground",

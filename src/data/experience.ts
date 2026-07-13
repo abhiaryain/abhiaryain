@@ -3,15 +3,15 @@ import type { Tag } from "@/types";
 
 export type Experience = {
   company: string;
-  /* 
-    position: The full job title or role displayed across the site.  
-    Example: Software Development Engineer  
+  /*
+    position: The full job title or role displayed across the site.
+    Example: Software Development Engineer
   */
   position: string;
 
-  /* 
-    shortPosition: A shortened version of the position, used on smaller screens or compact layouts.  
-    Example: SDE  
+  /*
+    shortPosition: A shortened version of the position, used on smaller screens or compact layouts.
+    Example: SDE
   */
   shortPosition: string;
   location: string;
