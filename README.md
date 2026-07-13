@@ -1,36 +1,30 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Hi <img src="./public/wave.gif" height="20px" /> Welcome to [Abhishek Kumar's](https://abhiarya.in) GitHub!
 
-## Getting Started
+I&apos;m a software engineer experienced in building scalable backend systems with
+[![Typescript](https://img.shields.io/badge/-TypeScript-3178c6?logo=typescript&logoColor=white)](https://www.typescriptlang.org)
+[![Node.js](https://img.shields.io/badge/-Node.js-3F8B3D?logo=node.js&logoColor=white)](https://nodejs.org)
+[![Redis](https://img.shields.io/badge/-Redis-FF4438?logo=redis&logoColor=white)](https://redis.io)
+[![Kafka](https://img.shields.io/badge/-Kafka-231F20?logo=apache-kafka&logoColor=white)](https://kafka.apache.org)
+[![Docker](https://img.shields.io/badge/-Docker-white?logo=docker&logoColor=2496ED)](https://www.docker.com)
+[![AWS](https://custom-icon-badges.demolab.com/badge/AWS-ffffff?logo=aws&logoColor=FF9900)](https://aws.amazon.com)
+and more.
 
-First, run the development server:
+<!--
+Currently, I&apos;m building [Currunt](https://currunt.in), and exploring every node in the technology graph, using DFS or BFS as needed — you can track my visited nodes under [learnings](https://learnings.abhiarya.in).
+-->
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Always excited when my PRs get merged! 😄
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+[More about me &rarr;](https://abhiarya.in)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+<!-- ### Open Source Projects -->
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+<!--
+### Personal Projects
 
-## Learn More
+- 🏃🏻‍➡️ **[Portfolio](https://abhiarya.in)** - A journey of continuous improvement.
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+| **PROJECTS** | **REPOSITORIES** |
+|:---------------:|:---------------:|
+| 🏃🏻‍➡️ **[Portfolio](https://abhiarya.in)** | [Code](https://github.com/abhiaryain/abhiaryain) |
+| <img src="https://github-readme-stats.vercel.app/api?username=abhiaryain&include_all_commits=true&show_icons=true&rank_icon=percentile&border_radius=20&show=reviews,discussions_started,discussions_answered,prs_merged,prs_merged_percentage" /> | <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=abhiaryain&layout=donut-vertical&border_radius=20&langs_count=2&size_weight=0.5&count_weight=0.5" /> | -->
