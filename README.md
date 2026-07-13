@@ -27,4 +27,5 @@ Always excited when my PRs get merged! 😄
 | **PROJECTS** | **REPOSITORIES** |
 |:---------------:|:---------------:|
 | 🏃🏻‍➡️ **[Portfolio](https://abhiarya.in)** | [Code](https://github.com/abhiaryain/abhiaryain) |
-| <img src="https://github-readme-stats.vercel.app/api?username=abhiaryain&include_all_commits=true&show_icons=true&rank_icon=percentile&border_radius=20&show=reviews,discussions_started,discussions_answered,prs_merged,prs_merged_percentage" /> | <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=abhiaryain&layout=donut-vertical&border_radius=20&langs_count=2&size_weight=0.5&count_weight=0.5" /> | -->
+| <img src="https://github-readme-stats.vercel.app/api?username=abhiaryain&include_all_commits=true&show_icons=true&rank_icon=percentile&border_radius=20&show=reviews,discussions_started,discussions_answered,prs_merged,prs_merged_percentage" /> | <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=abhiaryain&layout=donut-vertical&border_radius=20&langs_count=2&size_weight=0.5&count_weight=0.5" /> |
+-->
