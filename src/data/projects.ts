@@ -11,7 +11,7 @@ export type Project = {
   featured: boolean;
 };
 
-export const PROJECT_DATA = [
+export const PROJECTS_DATA = [
   {
     name: "Currunt",
     description:

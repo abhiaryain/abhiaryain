@@ -10,10 +10,10 @@ import {
   SectionTitle,
 } from "@/components/abhiarya-ui/section";
 import { ProjectCard } from "@/components/projects/projects-card";
-import { PROJECT_DATA } from "@/data/projects";
+import { PROJECTS_DATA } from "@/data/projects";
 
 export function Projects() {
-  const projects = PROJECT_DATA.filter((project) => project.featured);
+  const projects = PROJECTS_DATA.filter((project) => project.featured);
   return (
     <Section>
       <SectionHeader>

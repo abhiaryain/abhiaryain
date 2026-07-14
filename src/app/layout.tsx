@@ -6,11 +6,12 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Fade } from "@/components/abhiarya-ui/fade";
 import { Container } from "@/components/container/container";
+import { DataProvider } from "@/components/data-provider/data-provider";
 import { OneKo } from "@/components/oneko/oneko";
 import { ThemeProvider } from "@/components/theme-provider/theme-provider";
 import { EXPERIENCE_DATA } from "@/data/experience";
 import { PERSONAL_DATA } from "@/data/personal";
-import { PROJECT_DATA } from "@/data/projects";
+import { PROJECTS_DATA } from "@/data/projects";
 import { SOCIAL_DATA } from "@/data/social";
 import { getBaseURL } from "@/lib/base-url";
 import { cn } from "@/lib/utils";
@@ -57,7 +58,7 @@ export async function generateMetadata(): Promise<Metadata> {
         ...EXPERIENCE_DATA.map((experience) => experience.position),
         ...EXPERIENCE_DATA.map((experience) => experience.shortPosition),
         ...SOCIAL_DATA.map((social) => social.username),
-        ...PROJECT_DATA.map((project) => project.name),
+        ...PROJECTS_DATA.map((project) => project.name),
       ]),
     ),
     referrer: "strict-origin-when-cross-origin",
@@ -98,7 +99,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           disableTransitionOnChange
         >
           <Container>
-            <Fade>{children}</Fade>
+            <Fade>
+              <DataProvider>{children}</DataProvider>
+            </Fade>
           </Container>
           <OneKo />
         </ThemeProvider>

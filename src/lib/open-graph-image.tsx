@@ -2,9 +2,9 @@
 
 import type { JSX } from "react";
 import { PERSONAL_DATA } from "@/data/personal";
-import { PROJECT_DATA } from "@/data/projects";
+import { PROJECTS_DATA } from "@/data/projects";
 
-const projects = PROJECT_DATA.map((project) => project.icon);
+const projects = PROJECTS_DATA.map((project) => project.icon);
 
 const icons: Record<(typeof projects)[number], JSX.Element> = {
   currunt: (

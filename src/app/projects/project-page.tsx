@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { FadeItem } from "@/components/abhiarya-ui/fade";
 import { Contact } from "@/components/contact/contact";
+import { useData } from "@/components/data-provider/data-provider";
 import { Footer } from "@/components/footer/footer";
 import { ProjectCard } from "@/components/projects/projects-card";
 import { ThemeSwitcherCompact } from "@/components/theme-switcher/theme-switcher-compact";
@@ -12,10 +13,11 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
-import { PROJECT_DATA } from "@/data/projects";
 import { cn } from "@/lib/utils";
 
 export function ProjectsPage() {
+  const { projects } = useData();
+
   return (
     <>
       <FadeItem className="flex items-start justify-between">
@@ -49,7 +51,7 @@ export function ProjectsPage() {
           </h1>
         </FadeItem>
         <div className="space-y-3 py-4">
-          {PROJECT_DATA.map((project) => (
+          {projects.map((project) => (
             <ProjectCard
               key={project.name}
               name={project.name}
