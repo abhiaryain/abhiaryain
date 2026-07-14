@@ -1,3 +1,4 @@
+"use client";
 import { createContext, type ReactNode, useContext } from "react";
 import { EXPERIENCE_DATA } from "@/data/experience";
 import { LEARNINGS_DATA } from "@/data/learnings";
