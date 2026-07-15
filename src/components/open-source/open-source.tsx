@@ -1,7 +1,6 @@
 "use client";
 
 import { track } from "@vercel/analytics";
-import type { Activity } from "react-activity-calendar";
 import { FadeItem } from "@/components/abhiarya-ui/fade";
 import {
   Section,
@@ -14,6 +13,7 @@ import { ActivityCalendarComponent } from "@/components/open-source/activity-cal
 import { PullRequestComponent } from "@/components/open-source/pull-request";
 import { PERSONAL_DATA } from "@/data/personal";
 import type { ActionsReturn, PullRequest } from "@/types";
+import type { Activity } from "../kibo-ui/contribution-graph";
 
 export function OpenSource({
   pullRequest,
