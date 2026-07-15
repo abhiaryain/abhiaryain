@@ -8,13 +8,14 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { SOCIAL_DATA } from "@/data/social";
 import { cn } from "@/lib/utils";
+import { useData } from "../data-provider/data-provider";
 
 export function Social() {
+  const { social } = useData();
   return (
     <div className="flex gap-1 pt-1">
-      {SOCIAL_DATA.map((social) => {
+      {social.map((social) => {
         const Icon = icons[social.icon];
         return (
           <Tooltip key={social.name}>
