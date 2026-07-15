@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import { FadeItem } from "@/components/abhiarya-ui/fade";
 import { Contact } from "@/components/contact/contact";
