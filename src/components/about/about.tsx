@@ -7,7 +7,7 @@ import {
   SectionHeader,
   SectionTitle,
 } from "@/components/abhiarya-ui/section";
-import { useData } from "../data-provider/data-provider";
+import { useData } from "@/components/data-provider/data-provider";
 
 export function About() {
   const { personal } = useData();

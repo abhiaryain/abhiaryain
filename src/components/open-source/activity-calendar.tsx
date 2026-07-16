@@ -1,3 +1,4 @@
+import { format } from "date-fns";
 import { GitPullRequestCreateArrow, WifiOff } from "lucide-react";
 import { useEffect, useRef } from "react";
 import { FadeItem } from "@/components/abhiarya-ui/fade";
@@ -11,6 +12,11 @@ import {
   ContributionGraphLegend,
   ContributionGraphTotalCount,
 } from "@/components/kibo-ui/contribution-graph";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 import type { ActionsReturn } from "@/types";
 
 export function ActivityCalendarComponent({
@@ -50,18 +56,41 @@ export function ActivityCalendarComponent({
               blockSize={11}
               fontSize={12}
               blockMargin={2}
+              className="hover:none"
             >
               <ContributionGraphCalendar>
                 {({ activity, dayIndex, weekIndex }) => (
-                  <ContributionGraphBlock
-                    activity={activity}
-                    dayIndex={dayIndex}
-                    weekIndex={weekIndex}
-                  />
+                  <Tooltip>
+                    <TooltipTrigger
+                      render={
+                        <g>
+                          <ContributionGraphBlock
+                            activity={activity}
+                            dayIndex={dayIndex}
+                            weekIndex={weekIndex}
+                          />
+                        </g>
+                      }
+                    ></TooltipTrigger>
+                    <TooltipContent className="font-sans">
+                      <p>
+                        {activity.count} contribution
+                        {activity.count > 1 ? "s" : null} on{" "}
+                        {format(new Date(activity.date), "dd.MM.yyyy")}
+                      </p>
+                    </TooltipContent>
+                  </Tooltip>
                 )}
               </ContributionGraphCalendar>
               <ContributionGraphFooter>
-                <ContributionGraphTotalCount />
+                <ContributionGraphTotalCount>
+                  {({ totalCount }) => (
+                    <div className="text-muted-foreground">
+                      {totalCount.toLocaleString("en")} contributions in last
+                      year
+                    </div>
+                  )}
+                </ContributionGraphTotalCount>
                 <ContributionGraphLegend />
               </ContributionGraphFooter>
             </ContributionGraph>

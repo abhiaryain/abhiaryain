@@ -5,9 +5,9 @@ import { MapPin } from "lucide-react";
 import Link from "next/link";
 import { FadeItem } from "@/components/abhiarya-ui/fade";
 import { AvatarComponent } from "@/components/avatar/avatar-component";
+import { useData } from "@/components/data-provider/data-provider";
 import { Social } from "@/components/socials/social";
 import { cn } from "@/lib/utils";
-import { useData } from "../data-provider/data-provider";
 
 export function Header() {
   const { personal } = useData();

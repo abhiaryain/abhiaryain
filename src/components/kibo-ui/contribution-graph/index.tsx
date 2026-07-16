@@ -22,6 +22,11 @@ import {
   useContext,
   useMemo,
 } from "react";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
 
 export type Activity = {
@@ -383,12 +388,13 @@ export const ContributionGraphCalendar = ({
       {...props}
     >
       <svg
-        className="block overflow-visible"
+        aria-label="Contribution Graph"
+        role="img"
+        className="block overflow-visible [&>title]:pointer-events-none"
         height={height}
         viewBox={`0 0 ${width} ${height}`}
         width={width}
       >
-        <title>Contribution Graph</title>
         {!hideMonthLabels && (
           <g className="fill-current">
             {monthLabels.map(({ label, weekIndex }) => (
@@ -490,8 +496,13 @@ export const ContributionGraphLegend = ({
         children ? (
           <Fragment key={level}>{children({ level })}</Fragment>
         ) : (
-          <svg height={blockSize} key={level} width={blockSize}>
-            <title>{`${level} contributions`}</title>
+          <svg
+            height={blockSize}
+            key={level}
+            width={blockSize}
+            aria-label="Github"
+            role="img"
+          >
             <rect
               className={cn(
                 "stroke-[1px] stroke-border",

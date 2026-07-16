@@ -9,8 +9,8 @@ import {
   SectionLink,
   SectionTitle,
 } from "@/components/abhiarya-ui/section";
+import { useData } from "@/components/data-provider/data-provider";
 import { ExperienceCard } from "@/components/experience/experience-card";
-import { useData } from "../data-provider/data-provider";
 
 export function Experience() {
   const { experience, personal, social } = useData();

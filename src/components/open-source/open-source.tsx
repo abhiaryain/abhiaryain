@@ -9,11 +9,11 @@ import {
   SectionLink,
   SectionTitle,
 } from "@/components/abhiarya-ui/section";
+import type { Activity } from "@/components/kibo-ui/contribution-graph";
 import { ActivityCalendarComponent } from "@/components/open-source/activity-calendar";
 import { PullRequestComponent } from "@/components/open-source/pull-request";
 import { PERSONAL_DATA } from "@/data/personal";
 import type { ActionsReturn, PullRequest } from "@/types";
-import type { Activity } from "../kibo-ui/contribution-graph";
 
 export function OpenSource({
   pullRequest,

@@ -12,18 +12,13 @@ const icons: Record<(typeof projects)[number], JSX.Element> = {
       viewBox="0 0 68 68"
       fill="#008fe2"
       xmlns="http://www.w3.org/2000/svg"
+      aria-label="Currunt"
+      role="img"
       style={{
         width: "3rem",
         height: "3rem",
       }}
     >
-      <title
-        style={{
-          display: "none",
-        }}
-      >
-        Currunt
-      </title>
       <path
         d="M29 2.88675C32.094 1.10042 35.906 1.10042 39 2.88675L58.4449 14.1132C61.5389 15.8996 63.4449 19.2008 63.4449 22.7735V45.2265C63.4449 48.7992 61.5389 52.1004 58.4449 53.8868L39 65.1132C35.906 66.8996 32.094 66.8996 29 65.1132L9.55513 53.8867C6.46112 52.1004 4.55514 48.7992 4.55514 45.2265V22.7735C4.55514 19.2008 6.46112 15.8996 9.55514 14.1132L29 2.88675Z"
         fill="white"
@@ -43,18 +38,13 @@ const icons: Record<(typeof projects)[number], JSX.Element> = {
       viewBox="0 0 68 68"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      aria-label="Learnings"
+      role="img"
       style={{
         width: "3rem",
         height: "3rem",
       }}
     >
-      <title
-        style={{
-          display: "none",
-        }}
-      >
-        Learnings
-      </title>
       <path
         d="M29 2.88675C32.094 1.10042 35.906 1.10042 39 2.88675L58.4449 14.1132C61.5389 15.8996 63.4449 19.2008 63.4449 22.7735V45.2265C63.4449 48.7992 61.5389 52.1004 58.4449 53.8868L39 65.1132C35.906 66.8996 32.094 66.8996 29 65.1132L9.55513 53.8868C6.46112 52.1004 4.55514 48.7992 4.55514 45.2265V22.7735C4.55514 19.2008 6.46112 15.8996 9.55514 14.1132L29 2.88675Z"
         fill="white"

@@ -2,6 +2,7 @@
 
 import { track } from "@vercel/analytics";
 import Link from "next/link";
+import { useData } from "@/components/data-provider/data-provider";
 import { icons } from "@/components/icons";
 import {
   Tooltip,
@@ -9,7 +10,6 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
-import { useData } from "../data-provider/data-provider";
 
 export function Social() {
   const { social } = useData();

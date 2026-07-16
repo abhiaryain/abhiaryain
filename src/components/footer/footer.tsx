@@ -2,8 +2,8 @@
 
 import { FadeItem } from "@/components/abhiarya-ui/fade";
 import { Section, SectionContent } from "@/components/abhiarya-ui/section";
+import { useData } from "@/components/data-provider/data-provider";
 import { ThemeSwitcher } from "@/components/theme-switcher/theme-switcher";
-import { useData } from "../data-provider/data-provider";
 
 export function Footer() {
   const year = new Date().getFullYear();

@@ -1,8 +1,8 @@
 "use client";
 
 import Image from "next/image";
+import { useData } from "@/components/data-provider/data-provider";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { useData } from "../data-provider/data-provider";
 
 export function AvatarComponent() {
   const { personal } = useData();

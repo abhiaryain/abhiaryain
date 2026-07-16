@@ -1,4 +1,4 @@
-import { ArrowRight } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import Link from "next/link";
 import { FadeItem } from "@/components/abhiarya-ui/fade";
 import { Button } from "@/components/ui/button";
@@ -39,8 +39,8 @@ export function ErrorPage({ status, message }: ErrorProps) {
           )}
           aria-label="go-to-home"
         >
-          <Link href="/">
-            Go Home <ArrowRight />
+          <Link href="/" className="flex justify-center items-center gap-1">
+            Go Home <ChevronRight />
           </Link>
         </Button>
       </FadeItem>

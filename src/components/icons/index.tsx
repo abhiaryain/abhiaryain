@@ -7,8 +7,13 @@ export const icons = {
   email: LucideMail,
   phone: LucidePhone,
   github: (props: LucideProps) => (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...props}>
-      <title className="sr-only">GitHub</title>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      aria-label="Github"
+      role="img"
+      viewBox="0 0 24 24"
+      {...props}
+    >
       <path
         fill="currentColor"
         d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33c.85 0 1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z"
@@ -18,11 +23,12 @@ export const icons = {
   leetcode: (props: LucideProps) => (
     <svg
       viewBox="0 0 95 111"
+      aria-label="Leetcode"
+      role="img"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
-      <title className="sr-only">Leetcode</title>
       <path
         d="M68.0063 83.0664C70.5 80.5764 74.5366 80.5829 77.0223 83.0809C79.508 85.579 79.5015 89.6226 77.0078 92.1127L65.9346 103.17C55.7187 113.371 39.06 113.519 28.6718 103.513C28.6117 103.456 23.9861 98.9201 8.72653 83.957C-1.42528 74.0029 -2.43665 58.0749 7.11648 47.8464L24.9282 28.7745C34.4095 18.6219 51.887 17.5122 62.7275 26.2789L78.9048 39.362C81.6444 41.5776 82.0723 45.5985 79.8606 48.3429C77.6488 51.0873 73.635 51.5159 70.8954 49.3003L54.7182 36.2173C49.0488 31.6325 39.1314 32.2622 34.2394 37.5006L16.4274 56.5727C11.7767 61.5522 12.2861 69.574 17.6456 74.8292C28.851 85.8169 37.4869 94.2846 37.4969 94.2942C42.8977 99.496 51.6304 99.4184 56.9331 94.1234L68.0063 83.0664Z"
         fill="currentColor"
@@ -42,8 +48,13 @@ export const icons = {
     </svg>
   ),
   x: (props: LucideProps) => (
-    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" {...props}>
-      <title className="sr-only">X</title>
+    <svg
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-label="X"
+      role="img"
+      {...props}
+    >
       <path
         fill="currentColor"
         d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"
@@ -51,8 +62,13 @@ export const icons = {
     </svg>
   ),
   linkedin: (props: LucideProps) => (
-    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" {...props}>
-      <title className="sr-only">LinkedIn</title>
+    <svg
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-label="LinkedIn"
+      role="img"
+      {...props}
+    >
       <path
         fill="currentColor"
         d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
@@ -68,9 +84,10 @@ export const icons = {
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
+      aria-label="Resume"
+      role="img"
       {...props}
     >
-      <title className="sr-only">Resume</title>
       <rect x="3" y="2" width="18" height="20" rx="2"></rect>
       <path d="M3 8h18"></path>
       <path d="M3 12h10"></path>
@@ -82,10 +99,11 @@ export const icons = {
     <svg
       viewBox="0 0 256 256"
       xmlns="http://www.w3.org/2000/svg"
+      aria-label="TypeScript"
+      role="img"
       preserveAspectRatio="xMidYMid"
       {...props}
     >
-      <title className="sr-only">TypeScript</title>
       <path
         d="M20 0h216c11.046 0 20 8.954 20 20v216c0 11.046-8.954 20-20 20H20c-11.046 0-20-8.954-20-20V20C0 8.954 8.954 0 20 0Z"
         fill="#3178C6"
@@ -99,10 +117,11 @@ export const icons = {
   react: (props: LucideProps) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
+      aria-label="React"
+      role="img"
       viewBox="-11.5 -10.23174 23 20.46348"
       {...props}
     >
-      <title className="sr-only">React</title>
       <circle r={2.05} fill="#61dafb" />
       <g stroke="#61dafb" fill="none">
         <ellipse rx={11} ry={4.2} />
@@ -114,11 +133,12 @@ export const icons = {
   node: (props: LucideProps) => (
     <svg
       viewBox="0 0 256 292"
+      aria-label="Node"
+      role="img"
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
       {...props}
     >
-      <title className="sr-only">Node</title>
       <defs>
         <linearGradient
           id="a"
@@ -189,8 +209,13 @@ export const icons = {
     </svg>
   ),
   redis: (props: LucideProps) => (
-    <svg preserveAspectRatio="xMidYMid" viewBox="0 0 256 220" {...props}>
-      <title className="sr-only">Redis</title>
+    <svg
+      preserveAspectRatio="xMidYMid"
+      aria-label="Redis"
+      role="img"
+      viewBox="0 0 256 220"
+      {...props}
+    >
       <path
         d="M246 169c-13.7 7-84.5 36.2-99.5 44-15.1 7.9-23.5 7.8-35.4 2.1C99.2 209.4 24 179 10.3 172.5 3.6 169.3 0 166.5 0 164v-26s98-21.3 113.9-27c15.8-5.6 21.3-5.8 34.8-.9 13.4 5 94 19.5 107.3 24.3V160c0 2.5-3 5.3-10 9"
         fill="#912626"
@@ -224,8 +249,13 @@ export const icons = {
     </svg>
   ),
   docker: (props: LucideProps) => (
-    <svg viewBox="0 0 24 24" fill="#008fe2" {...props}>
-      <title className="sr-only">Docker</title>
+    <svg
+      viewBox="0 0 24 24"
+      fill="#008fe2"
+      aria-label="Docker"
+      role="img"
+      {...props}
+    >
       <path d="M13.98 11.08h2.12a.19.19 0 0 0 .19-.19V9.01a.19.19 0 0 0-.19-.19h-2.12a.18.18 0 0 0-.18.18v1.9c0 .1.08.18.18.18m-2.95-5.43h2.12a.19.19 0 0 0 .18-.19V3.57a.19.19 0 0 0-.18-.18h-2.12a.18.18 0 0 0-.19.18v1.9c0 .1.09.18.19.18m0 2.71h2.12a.19.19 0 0 0 .18-.18V6.29a.19.19 0 0 0-.18-.18h-2.12a.18.18 0 0 0-.19.18v1.89c0 .1.09.18.19.18m-2.93 0h2.12a.19.19 0 0 0 .18-.18V6.29a.18.18 0 0 0-.18-.18H8.1a.18.18 0 0 0-.18.18v1.89c0 .1.08.18.18.18m-2.96 0h2.11a.19.19 0 0 0 .19-.18V6.29a.18.18 0 0 0-.19-.18H5.14a.19.19 0 0 0-.19.18v1.89c0 .1.08.18.19.18m5.89 2.72h2.12a.19.19 0 0 0 .18-.19V9.01a.19.19 0 0 0-.18-.19h-2.12a.18.18 0 0 0-.19.18v1.9c0 .1.09.18.19.18m-2.93 0h2.12a.18.18 0 0 0 .18-.19V9.01a.18.18 0 0 0-.18-.19H8.1a.18.18 0 0 0-.18.18v1.9c0 .1.08.18.18.18m-2.96 0h2.11a.18.18 0 0 0 .19-.19V9.01a.18.18 0 0 0-.18-.19H5.14a.19.19 0 0 0-.19.19v1.88c0 .1.08.19.19.19m-2.92 0h2.12a.18.18 0 0 0 .18-.19V9.01a.18.18 0 0 0-.18-.19H2.22a.18.18 0 0 0-.19.18v1.9c0 .1.08.18.19.18m21.54-1.19c-.06-.05-.67-.51-1.95-.51-.34 0-.68.03-1.01.09a3.77 3.77 0 0 0-1.72-2.57l-.34-.2-.23.33a4.6 4.6 0 0 0-.6 1.43c-.24.97-.1 1.88.4 2.66a4.7 4.7 0 0 1-1.75.42H.76a.75.75 0 0 0-.76.75 11.38 11.38 0 0 0 .7 4.06 6.03 6.03 0 0 0 2.4 3.12c1.18.73 3.1 1.14 5.28 1.14.98 0 1.96-.08 2.93-.26a12.25 12.25 0 0 0 3.82-1.4 10.5 10.5 0 0 0 2.61-2.13c1.25-1.42 2-3 2.55-4.4h.23c1.37 0 2.21-.55 2.68-1 .3-.3.55-.66.7-1.06l.1-.28Z" />
     </svg>
   ),
@@ -235,9 +265,10 @@ export const icons = {
       viewBox="0 0 68 68"
       fill="#008fe2"
       xmlns="http://www.w3.org/2000/svg"
+      aria-label="Currunt"
+      role="img"
       {...props}
     >
-      <title className="sr-only">Currunt</title>
       <path
         d="M29 2.88675C32.094 1.10042 35.906 1.10042 39 2.88675L58.4449 14.1132C61.5389 15.8996 63.4449 19.2008 63.4449 22.7735V45.2265C63.4449 48.7992 61.5389 52.1004 58.4449 53.8868L39 65.1132C35.906 66.8996 32.094 66.8996 29 65.1132L9.55513 53.8867C6.46112 52.1004 4.55514 48.7992 4.55514 45.2265V22.7735C4.55514 19.2008 6.46112 15.8996 9.55514 14.1132L29 2.88675Z"
         fill="currentColor"
@@ -260,9 +291,10 @@ export const icons = {
       viewBox="0 0 68 68"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      aria-label="Learnings"
+      role="img"
       {...props}
     >
-      <title className="sr-only">Learnings</title>
       <path
         d="M29 2.88675C32.094 1.10042 35.906 1.10042 39 2.88675L58.4449 14.1132C61.5389 15.8996 63.4449 19.2008 63.4449 22.7735V45.2265C63.4449 48.7992 61.5389 52.1004 58.4449 53.8868L39 65.1132C35.906 66.8996 32.094 66.8996 29 65.1132L9.55513 53.8868C6.46112 52.1004 4.55514 48.7992 4.55514 45.2265V22.7735C4.55514 19.2008 6.46112 15.8996 9.55514 14.1132L29 2.88675Z"
         fill="currentColor"
@@ -305,6 +337,8 @@ export const icons = {
       viewBox="-78.5 0 413 413"
       preserveAspectRatio="xMidYMid"
       fill="currentColor"
+      aria-label="Kafka"
+      role="img"
       // icons with black or white color needs to be hovered to change the color.
       className={cn(
         "group-hover:fill-black dark:group-hover:fill-white",
@@ -312,7 +346,6 @@ export const icons = {
       )}
       {...props}
     >
-      <title className="sr-only">Kafka</title>
       <g id="apache_kafka_dark__SVGRepo_bgCarrier" strokeWidth="0" />
       <g
         id="apache_kafka_dark__SVGRepo_tracerCarrier"
@@ -333,9 +366,10 @@ export const icons = {
       x={0}
       y={0}
       viewBox="0 0 304 182"
+      aria-label="AWS"
+      role="img"
       {...props}
     >
-      <title className="sr-only">AWS</title>
       <path
         fill="currentColor"
         className="group-hover:fill-black dark:group-hover:fill-white"
@@ -356,9 +390,10 @@ export const icons = {
       xmlns="http://www.w3.org/2000/svg"
       xmlSpace="preserve"
       viewBox="0 0 432.071 445.383"
+      aria-label="postgres"
+      role="img"
       {...props}
     >
-      <title className="sr-only">postgres</title>
       <g
         style={{
           fillRule: "nonzero",
@@ -426,9 +461,10 @@ export const icons = {
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 200 200"
       preserveAspectRatio="xMidYMid meet"
+      aria-label="Mithila Stack"
+      role="img"
       {...props}
     >
-      <title className="sr-only">Mithila Stack</title>
       <g fill="#344a58">
         <path d="M0 100 l0 -100 100 0 100 0 0 100 0 100 -100 0 -100 0 0 -100z m80.40 16.25 l-0.15 -15.75 2 0 c1.65 0 3.60 0.90 9.70 4.25 4.20 2.35 7.80 4.25 7.95 4.25 0.20 0 3.95 -1.95 8.35 -4.25 6.55 -3.50 8.40 -4.25 10.20 -4.25 l2.20 0 -0.30 4.90 c-0.15 2.65 -0.15 6.25 0 7.90 l0.30 3.05 2.80 0.65 c6.10 1.35 10.35 4.65 13.10 10.25 0.90 1.80 1.80 3.40 2.05 3.55 0.30 0.20 0.40 -7.80 0.30 -20.60 -0.20 -20.55 -0.20 -21 -1.35 -23.90 -1.50 -3.75 -4.40 -6.90 -7.85 -8.60 -4.35 -2.15 -5.55 -1.95 -13.95 2.30 -8.85 4.45 -11.75 6.95 -14 12.10 -1.40 3.20 -1.60 3.35 -3.20 3.40 l-1.70 0 0.25 -3.60 c0.15 -2 0.35 -3.95 0.45 -4.30 0.15 -0.40 -2.70 -2.20 -7.30 -4.65 -4.10 -2.25 -8 -4.35 -8.60 -4.75 -1.10 -0.70 -1.15 -1.05 -1.15 -6.05 0 -10.30 -1.65 -15.30 -6.75 -20.40 -2.75 -2.75 -6.40 -5 -10.85 -6.70 l-1.40 -0.55 -0.10 13.15 c-0.10 7.20 -0.05 14.80 0 16.85 0.30 9.10 4.10 15.60 13.75 23.65 l2.85 2.40 0 3.20 c0 4.10 -0.60 4.75 -4.45 4.75 -2.05 0 -3.25 -0.25 -4.10 -0.90 -1.60 -1.20 -7.25 -4.60 -7.70 -4.60 -0.15 0 -0.25 0.50 -0.15 1.10 0.10 0.70 1.50 1.90 4.50 3.75 3.60 2.20 4.45 3 4.90 4.45 0.70 2.05 0.30 5.40 -0.80 7.10 -0.95 1.45 -4.20 1.50 -6.85 0.10 l-1.85 -1 0 1.10 c0 0.65 0.20 1.40 0.40 1.75 0.20 0.35 4.10 2.65 8.60 5.20 4.55 2.50 8.45 4.75 8.75 5 0.25 0.25 0.65 0.45 0.90 0.45 0.25 0 0.35 -6.70 0.25 -15.75z" />
       </g>
@@ -463,9 +499,10 @@ export const icons = {
       viewBox="0 0 200 200"
       xmlns="http://www.w3.org/2000/svg"
       className={cn("flex items-center justify-center", className)}
+      aria-label="Aaensa Tech"
+      role="img"
       {...props}
     >
-      <title className="sr-only">Aaensa Tech</title>
       <g
         fill="currentColor"
         className="fill-white/20 transition-color duration-100 group-hover:fill-white/70"
@@ -479,8 +516,7 @@ export const icons = {
     </svg>
   ),
   next: (props: LucideProps) => (
-    <svg viewBox="0 0 180 180" {...props}>
-      <title className="sr-only">Next</title>
+    <svg viewBox="0 0 180 180" aria-label="Next" role="img" {...props}>
       <mask
         height="180"
         id="nextjs_icon_dark__:r8:mask0_408_134"
@@ -539,8 +575,13 @@ export const icons = {
     </svg>
   ),
   tailwind: (props: LucideProps) => (
-    <svg fill="none" viewBox="0 0 54 33" {...props}>
-      <title className="sr-only">Tailwind CSS</title>
+    <svg
+      fill="none"
+      viewBox="0 0 54 33"
+      aria-label="Tailwind CSS"
+      role="img"
+      {...props}
+    >
       <g clipPath="url(#tailwindcss__a)">
         <path
           fill="#38bdf8"
@@ -558,7 +599,6 @@ export const icons = {
   ),
   mdx: (props: LucideProps) => (
     <svg viewBox="0 0 138 57" aria-label="MDX" role="img" {...props}>
-      <title className="sr-only">MDX</title>
       <g>
         <rect
           fill="#fcb32c"
@@ -581,11 +621,12 @@ export const icons = {
     <svg
       data-testid="geist-icon"
       strokeLinejoin="round"
+      aria-label="AI SDK"
+      role="img"
       viewBox="0 0 16 16"
       style={{ color: "currentcolor" }}
       {...props}
     >
-      <title className="sr-only">AI SDK</title>
       <path
         d="M2.5 0.5V0H3.5V0.5C3.5 1.60457 4.39543 2.5 5.5 2.5H6V3V3.5H5.5C4.39543 3.5 3.5 4.39543 3.5 5.5V6H3H2.5V5.5C2.5 4.39543 1.60457 3.5 0.5 3.5H0V3V2.5H0.5C1.60457 2.5 2.5 1.60457 2.5 0.5Z"
         fill="currentColor"
@@ -604,8 +645,7 @@ export const icons = {
     </svg>
   ),
   bun: (props: LucideProps) => (
-    <svg viewBox="0 0 80 70" {...props}>
-      <title className="sr-only">Bun</title>
+    <svg viewBox="0 0 80 70" aria-label="Bun" role="img" {...props}>
       <path d="M71.09 20.74c-.16-.17-.33-.34-.5-.5s-.33-.34-.5-.5-.33-.34-.5-.5-.33-.34-.5-.5-.33-.34-.5-.5-.33-.34-.5-.5-.33-.34-.5-.5A26.46 26.46 0 0 1 75.5 35.7c0 16.57-16.82 30.05-37.5 30.05-11.58 0-21.94-4.23-28.83-10.86l.5.5.5.5.5.5.5.5.5.5.5.5.5.5C19.55 65.3 30.14 69.75 42 69.75c20.68 0 37.5-13.48 37.5-30 0-7.06-3.04-13.75-8.41-19.01Z" />
       <path
         d="M73 35.7c0 15.21-15.67 27.54-35 27.54S3 50.91 3 35.7C3 26.27 9 17.94 18.22 13S33.18 3 38 3s8.94 4.13 19.78 10C67 17.94 73 26.27 73 35.7Z"
@@ -663,8 +703,13 @@ export const icons = {
     </svg>
   ),
   hono: (props: LucideProps) => (
-    <svg preserveAspectRatio="xMidYMid" viewBox="0 0 256 330" {...props}>
-      <title className="sr-only">Hono</title>
+    <svg
+      preserveAspectRatio="xMidYMid"
+      aria-label="Hono"
+      role="img"
+      viewBox="0 0 256 330"
+      {...props}
+    >
       <path
         d="M134.129.029c.876-.113 1.65.108 2.319.662a1256.253 1256.253 0 0 1 69.573 93.427c16.094 24.231 29.788 49.851 41.082 76.862 18.037 48.108 8.65 89.963-28.16 125.564-32.209 27.22-69.314 37.822-111.318 31.805-50.208-10.237-84.332-39.28-102.373-87.133C.553 225.638-.993 209.736.614 193.51c2.676-27.93 9.302-54.877 19.878-80.838 4.407-10.592 10.15-20.31 17.228-29.154a381.88 381.88 0 0 1 16.565 21.203c2.44 2.55 4.98 4.98 7.62 7.289C82.06 72.01 106.135 34.685 134.13.029Z"
         fill="#FF5B11"

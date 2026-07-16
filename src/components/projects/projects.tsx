@@ -9,8 +9,8 @@ import {
   SectionLink,
   SectionTitle,
 } from "@/components/abhiarya-ui/section";
+import { useData } from "@/components/data-provider/data-provider";
 import { ProjectCard } from "@/components/projects/projects-card";
-import { useData } from "../data-provider/data-provider";
 
 export function Projects() {
   const { projects } = useData();
