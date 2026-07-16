@@ -1,3 +1,5 @@
+"use client";
+
 import { FadeItem } from "@/components/abhiarya-ui/fade";
 import {
   Section,
@@ -5,9 +7,10 @@ import {
   SectionHeader,
   SectionTitle,
 } from "@/components/abhiarya-ui/section";
-import { PERSONAL_DATA } from "@/data/personal";
+import { useData } from "../data-provider/data-provider";
 
 export function About() {
+  const { personal } = useData();
   return (
     <Section className="gap-2">
       <SectionHeader>
@@ -16,7 +19,7 @@ export function About() {
         </FadeItem>
       </SectionHeader>
       <SectionContent>
-        <FadeItem>{PERSONAL_DATA.about}</FadeItem>
+        <FadeItem>{personal.about}</FadeItem>
       </SectionContent>
     </Section>
   );

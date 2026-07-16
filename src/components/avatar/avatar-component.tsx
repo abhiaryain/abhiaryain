@@ -1,20 +1,23 @@
+"use client";
+
 import Image from "next/image";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { PERSONAL_DATA } from "@/data/personal";
+import { useData } from "../data-provider/data-provider";
 
 export function AvatarComponent() {
+  const { personal } = useData();
   return (
     <Avatar className="size-36 rounded-2xl">
       <AvatarImage
         loading="lazy"
-        src={PERSONAL_DATA.avatar}
-        alt={PERSONAL_DATA.nickname}
+        src={personal.avatar}
+        alt={personal.nickname}
       ></AvatarImage>
       <AvatarFallback>
         {/* Image as a fallback because Image component support optimizations, caching and blur-hash */}
         <Image
-          src={PERSONAL_DATA.image}
-          alt={PERSONAL_DATA.nickname}
+          src={personal.image}
+          alt={personal.nickname}
           width={300}
           height={300}
           placeholder="blur"

@@ -10,11 +10,11 @@ import {
   SectionTitle,
 } from "@/components/abhiarya-ui/section";
 import { ExperienceCard } from "@/components/experience/experience-card";
-import { EXPERIENCE_DATA } from "@/data/experience";
-import { PERSONAL_DATA } from "@/data/personal";
-import { SOCIAL_DATA } from "@/data/social";
+import { useData } from "../data-provider/data-provider";
 
 export function Experience() {
+  const { experience, personal, social } = useData();
+
   return (
     <Section>
       <SectionHeader>
@@ -25,8 +25,8 @@ export function Experience() {
           <SectionTitle className="text-xs">
             <SectionLink
               href={
-                SOCIAL_DATA.find((social) => social.name.toLowerCase() === "x")
-                  ?.url ?? `https://github.com/${PERSONAL_DATA.github}`
+                social.find((social) => social.name.toLowerCase() === "x")
+                  ?.url ?? `https://github.com/${personal.github}`
               }
               onClick={() => track("available_for_new_opportunities_clicked")}
               className="gap-1"
@@ -41,8 +41,9 @@ export function Experience() {
         </FadeItem>
       </SectionHeader>
       <SectionContent>
-        {EXPERIENCE_DATA.filter((experience) => experience.featured).map(
-          (experience) => (
+        {experience
+          .filter((experience) => experience.featured)
+          .map((experience) => (
             <ExperienceCard
               key={experience.company}
               company={experience.company}
@@ -56,8 +57,7 @@ export function Experience() {
               icon={experience.icon}
               featured={experience.featured}
             />
-          ),
-        )}
+          ))}
       </SectionContent>
     </Section>
   );

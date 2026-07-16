@@ -25,6 +25,24 @@ export type Experience = {
 
 export const EXPERIENCE_DATA = [
   {
+    company: "Vridhee",
+    position: "Software Development Engineer",
+    shortPosition: "SDE",
+    location: "Remote",
+    startDate: "May 2026",
+    endDate: "Present",
+    url: "https://mithilastack.com",
+    links: [
+      {
+        name: "Github",
+        icon: "github",
+        url: "https://github.com/mithilastack",
+      },
+    ],
+    icon: "mithila",
+    featured: true,
+  },
+  {
     company: "Mithila Stack",
     position: "Software Development Engineer",
     shortPosition: "SDE",

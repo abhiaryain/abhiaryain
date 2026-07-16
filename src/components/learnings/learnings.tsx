@@ -10,9 +10,10 @@ import {
   SectionTitle,
 } from "@/components/abhiarya-ui/section";
 import { LearningCard } from "@/components/learnings/learnings-card";
-import { LEARNINGS_DATA } from "@/data/learnings";
+import { useData } from "../data-provider/data-provider";
 
 export function Learnings() {
+  const { learnings } = useData();
   return (
     <Section>
       <SectionHeader>
@@ -32,7 +33,7 @@ export function Learnings() {
         </FadeItem>
       </SectionHeader>
       <SectionContent>
-        {LEARNINGS_DATA.map((learnings) => (
+        {learnings.map((learnings) => (
           <LearningCard
             key={learnings.title}
             title={learnings.title}

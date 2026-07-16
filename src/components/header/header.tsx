@@ -6,10 +6,12 @@ import Link from "next/link";
 import { FadeItem } from "@/components/abhiarya-ui/fade";
 import { AvatarComponent } from "@/components/avatar/avatar-component";
 import { Social } from "@/components/socials/social";
-import { PERSONAL_DATA } from "@/data/personal";
 import { cn } from "@/lib/utils";
+import { useData } from "../data-provider/data-provider";
 
 export function Header() {
+  const { personal } = useData();
+
   return (
     <div className="flex items-center justify-between gap-4">
       <div className="flex-1 space-y-1.5">
@@ -18,12 +20,12 @@ export function Header() {
         </FadeItem>
         <FadeItem>
           <h1 className="whitespace-nowrap font-bold text-2xl">
-            {PERSONAL_DATA.name}
+            {personal.name}
           </h1>
         </FadeItem>
         <FadeItem>
           <p className="text-pretty font-mono text-muted-foreground text-sm sm:max-w-md">
-            {PERSONAL_DATA.bio}
+            {personal.bio}
           </p>
         </FadeItem>
         <FadeItem>
@@ -36,13 +38,13 @@ export function Header() {
                 "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50",
                 "focus-visible:ring-offset-4 focus-visible:ring-offset-background",
               )}
-              href={PERSONAL_DATA.address.url}
+              href={personal.address.url}
               rel="noopener"
               target="_blank"
               onClick={() => track("header_address_clicked")}
             >
               <MapPin className="size-3" />
-              {`${PERSONAL_DATA.address.state}, ${PERSONAL_DATA.address.country}`}
+              {`${personal.address.state}, ${personal.address.country}`}
             </Link>
           </p>
         </FadeItem>

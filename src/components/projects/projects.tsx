@@ -10,10 +10,10 @@ import {
   SectionTitle,
 } from "@/components/abhiarya-ui/section";
 import { ProjectCard } from "@/components/projects/projects-card";
-import { PROJECTS_DATA } from "@/data/projects";
+import { useData } from "../data-provider/data-provider";
 
 export function Projects() {
-  const projects = PROJECTS_DATA.filter((project) => project.featured);
+  const { projects } = useData();
   return (
     <Section>
       <SectionHeader>
@@ -34,18 +34,20 @@ export function Projects() {
         </FadeItem>
       </SectionHeader>
       <SectionContent>
-        {projects.map((project) => (
-          <ProjectCard
-            key={project.name}
-            name={project.name}
-            description={project.description}
-            url={project.url}
-            icon={project.icon}
-            links={project.links}
-            tags={project.tags}
-            featured={project.featured}
-          />
-        ))}
+        {projects
+          .filter((project) => project.featured)
+          .map((project) => (
+            <ProjectCard
+              key={project.name}
+              name={project.name}
+              description={project.description}
+              url={project.url}
+              icon={project.icon}
+              links={project.links}
+              tags={project.tags}
+              featured={project.featured}
+            />
+          ))}
       </SectionContent>
     </Section>
   );
