@@ -97,7 +97,7 @@ export const PERSONAL_DATA = {
   name: "Abhishek Kumar",
   nickname: "Abhi Arya",
   title: "Software Engineer",
-  avatar: "https://avatars.githubusercontent.com/u/245309237?v=4",
+  avatar: "https://avatars.githubusercontent.com/u/302746395",
   image: "/avatar.webp",
   portfolio: "https://abhiarya.in",
   github: "abhiaryain",
