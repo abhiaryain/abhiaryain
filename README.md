@@ -19,11 +19,11 @@ Always excited when my PRs get merged! 😄
 
 <!-- ### Open Source Projects -->
 
-<!--
 ### Personal Projects
 
 - 🏃🏻‍➡️ **[Portfolio](https://abhiarya.in)** - A journey of continuous improvement.
 
+<!--
 | **PROJECTS** | **REPOSITORIES** |
 |:---------------:|:---------------:|
 | 🏃🏻‍➡️ **[Portfolio](https://abhiarya.in)** | [Code](https://github.com/abhiaryain/abhiaryain) |
