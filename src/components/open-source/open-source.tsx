@@ -45,7 +45,9 @@ export function OpenSource({
         <FadeItem className="rounded-lg border-2 border-border p-4 md:rounded-none md:border-none md:p-0">
           <ActivityCalendarComponent activities={activities} />
         </FadeItem>
-        <PullRequestComponent pullRequest={pullRequest} />
+        <FadeItem>
+          <PullRequestComponent pullRequest={pullRequest} />
+        </FadeItem>
       </SectionContent>
     </Section>
   );
