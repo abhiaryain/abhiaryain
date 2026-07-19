@@ -1,5 +1,5 @@
 import { ImageResponse } from "next/og";
-import { PERSONAL_DATA } from "@/data/personal";
+import { PERSONAL } from "@/data/personal";
 import { openGraphImages } from "@/lib/open-graph-image";
 
 export const size = {
@@ -7,7 +7,7 @@ export const size = {
   height: 630,
 };
 
-export const alt = PERSONAL_DATA.nickname;
+export const alt = PERSONAL.nickname;
 export const contentType = "image/svg+xml";
 
 export default async function Image() {

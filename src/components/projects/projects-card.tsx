@@ -15,7 +15,7 @@ import {
 import { FadeItem } from "@/components/abhiarya-ui/fade";
 import { icons } from "@/components/icons";
 import { TagList } from "@/components/tag-list/tag-list";
-import type { Project } from "@/data/projects";
+import type { Project } from "@/types/project";
 
 export function ProjectCard({
   name,

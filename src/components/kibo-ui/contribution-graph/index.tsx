@@ -14,6 +14,9 @@ import {
   subWeeks,
 } from "date-fns";
 import {
+  type ComponentProps,
+  ComponentPropsWithoutRef,
+  type ComponentPropsWithRef,
   type CSSProperties,
   createContext,
   Fragment,
@@ -257,7 +260,7 @@ export const ContributionGraph = ({
   weekStart = 0,
   className,
   ...props
-}: ContributionGraphProps) => {
+}: ContributionGraphProps & ComponentProps<"div">) => {
   const maxLevel = Math.max(1, maxLevelProp);
   const weeks = useMemo(() => groupByWeeks(data, weekStart), [data, weekStart]);
   const LABEL_MARGIN = 8;
@@ -374,7 +377,8 @@ export const ContributionGraphCalendar = ({
   className,
   children,
   ...props
-}: ContributionGraphCalendarProps) => {
+}: ContributionGraphCalendarProps &
+  Omit<ComponentPropsWithRef<"div">, "children">) => {
   const { weeks, width, height, blockSize, blockMargin, labels } =
     useContributionGraph();
 

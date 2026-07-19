@@ -28,11 +28,16 @@ Copy the `.env.example` file to `.env` using `cp .env.example .env` and fill in 
 
 <details>
 <summary>How to setup github token?</summary>
-<br>
 
 - Navigate to github [settings](https://github.com/settings/personal-access-tokens).
 
-- Generate a new token with required scopes.
+- Generate a new Personal Access Token (PAT) with required to fetch repository data from GitHub.
+    - Required permissions:
+        - Issues: Read-only
+        - Metadata: Read-only
+        - Pull requests: Read-only
+    - Repository access:
+        - All repositories (recommended for full context)
 
 - Set the token as `GITHUB_TOKEN` in `.env` file.
 </details>
@@ -48,13 +53,12 @@ bun run dev
 The application should now be running at http://localhost:3000
 
 <br />
-<br />
 
 ## Making Changes
 
 ### Fork the repo
 
-- On GitHub, click the "Fork" button and make your own fork of the repo
+- On GitHub, click the "Fork" button and make your own fork of the repository
 
 ### Clone your fork locally
 
@@ -94,8 +98,7 @@ git push origin feature/your-feature-name
 
 - Go to GitHub and open a pull request from your feature branch
 
-> Note: If you open a pull request, try to minimize the amount of repo wide changes you make. It will highly increase
-> the chances that we just review and merge.
+> Note: If you open a pull request, try to minimize the amount of repo wide changes. It will highly increase the chances that we just review and merge.
 
 ## License
 

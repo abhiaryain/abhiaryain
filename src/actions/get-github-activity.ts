@@ -1,13 +1,14 @@
 import "server-only";
 
+import { request } from "@/actions/fetch";
 import type { Activity } from "@/components/kibo-ui/contribution-graph";
-import { env } from "@/config/server-env";
-import { PERSONAL_DATA } from "@/data/personal";
-import type { ActionsReturn, Week } from "@/types";
+import { PERSONAL } from "@/data/personal";
+import type { ActionResult } from "@/types/github/api";
+import type { ContributionWeek } from "@/types/github/contribution";
 
 const query = `
 query {
-  user(login: "${PERSONAL_DATA.github}") {
+  user(login: "${PERSONAL.github}") {
     contributionsCollection {
       contributionCalendar {
         totalContributions
@@ -32,33 +33,28 @@ function getLevel(count: number) {
   return 4;
 }
 
-export async function getGithubActivity(): Promise<ActionsReturn<Activity[]>> {
-  const res = await fetch("https://api.github.com/graphql", {
-    cache: "force-cache",
-    next: { revalidate: 60 * 60 }, // 1 hours
-    method: "POST",
-    body: JSON.stringify({
-      query,
-    }),
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${env.GITHUB_TOKEN}`,
-    },
-  });
+export async function getGithubActivity(): Promise<ActionResult<Activity[]>> {
+  const res = await request(query);
 
   if (!res.ok) {
-    return { error: { message: "Unable to fetch GitHub activity." } };
+    return {
+      success: false,
+      error: { message: "Unable to fetch GitHub activity." },
+    };
   }
 
   const { data } = await res.json();
 
   if (!data?.user?.contributionsCollection?.contributionCalendar?.weeks) {
-    return { error: { message: "GitHub response is missing expected data." } };
+    return {
+      success: false,
+      error: { message: "GitHub response is missing expected data." },
+    };
   }
 
   let contributions: Activity[] =
     data.user.contributionsCollection.contributionCalendar.weeks.flatMap(
-      (week: Week) =>
+      (week: ContributionWeek) =>
         week.contributionDays.map((day) => ({
           date: day.date,
           count: day.contributionCount,
@@ -71,5 +67,5 @@ export async function getGithubActivity(): Promise<ActionsReturn<Activity[]>> {
     contributions = contributions.slice(contributions.length - 350);
   }
 
-  return { data: contributions };
+  return { success: true, data: contributions };
 }

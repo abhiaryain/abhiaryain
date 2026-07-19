@@ -6,13 +6,14 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Fade } from "@/components/abhiarya-ui/fade";
 import { Container } from "@/components/container/container";
-import { DataProvider } from "@/components/data-provider/data-provider";
 import { OneKo } from "@/components/oneko/oneko";
 import { ThemeProvider } from "@/components/theme-provider/theme-provider";
-import { EXPERIENCE_DATA } from "@/data/experience";
-import { PERSONAL_DATA } from "@/data/personal";
-import { PROJECTS_DATA } from "@/data/projects";
-import { SOCIAL_DATA } from "@/data/social";
+import { TooltipProvider } from "@/components/ui/tooltip";
+import { DataProvider } from "@/context/data-context";
+import { EXPERIENCES } from "@/data/experience";
+import { PERSONAL } from "@/data/personal";
+import { PROJECTS } from "@/data/projects";
+import { SOCIALS } from "@/data/social";
 import { getBaseURL } from "@/lib/base-url";
 import { cn } from "@/lib/utils";
 
@@ -33,57 +34,57 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     metadataBase: new URL(baseURL),
     title: {
-      default: PERSONAL_DATA.nickname,
-      template: `%s | ${PERSONAL_DATA.nickname}`,
+      default: PERSONAL.nickname,
+      template: `%s | ${PERSONAL.nickname}`,
     },
-    description: PERSONAL_DATA.summary,
-    applicationName: PERSONAL_DATA.nickname,
+    description: PERSONAL.summary,
+    applicationName: PERSONAL.nickname,
     authors: [
-      { name: PERSONAL_DATA.nickname, url: new URL(baseURL) },
-      { name: PERSONAL_DATA.name, url: new URL(baseURL) },
+      { name: PERSONAL.nickname, url: new URL(baseURL) },
+      { name: PERSONAL.name, url: new URL(baseURL) },
     ],
     keywords: Array.from(
       new Set([
-        PERSONAL_DATA.name,
-        PERSONAL_DATA.name.split(" ")[0],
-        PERSONAL_DATA.nickname,
-        PERSONAL_DATA.nickname.split(" ")[0],
-        PERSONAL_DATA.nickname.split(" ").join(""),
-        PERSONAL_DATA.title,
-        PERSONAL_DATA.github,
-        PERSONAL_DATA.portfolio,
-        ...PERSONAL_DATA.phones,
-        ...PERSONAL_DATA.emails,
-        ...EXPERIENCE_DATA.map((experience) => experience.company),
-        ...EXPERIENCE_DATA.map((experience) => experience.position),
-        ...EXPERIENCE_DATA.map((experience) => experience.shortPosition),
-        ...SOCIAL_DATA.map((social) => social.username),
-        ...PROJECTS_DATA.map((project) => project.name),
+        PERSONAL.name,
+        PERSONAL.name.split(" ")[0],
+        PERSONAL.nickname,
+        PERSONAL.nickname.split(" ")[0],
+        PERSONAL.nickname.split(" ").join(""),
+        PERSONAL.title,
+        PERSONAL.github,
+        PERSONAL.portfolio,
+        ...PERSONAL.phones,
+        ...PERSONAL.emails,
+        ...EXPERIENCES.map((experience) => experience.company),
+        ...EXPERIENCES.map((experience) => experience.position),
+        ...EXPERIENCES.map((experience) => experience.label),
+        ...SOCIALS.map((social) => social.username),
+        ...PROJECTS.map((project) => project.name),
       ]),
     ),
     referrer: "strict-origin-when-cross-origin",
-    creator: PERSONAL_DATA.nickname,
-    publisher: PERSONAL_DATA.nickname,
+    creator: PERSONAL.nickname,
+    publisher: PERSONAL.nickname,
     openGraph: {
       url: new URL(baseURL),
-      siteName: PERSONAL_DATA.nickname,
+      siteName: PERSONAL.nickname,
       // TODO: Add og:video support
       type: "website",
-      emails: PERSONAL_DATA.emails,
-      phoneNumbers: PERSONAL_DATA.phones,
-      countryName: PERSONAL_DATA.address.country,
+      emails: [...PERSONAL.emails],
+      phoneNumbers: [...PERSONAL.phones],
+      countryName: PERSONAL.address.country,
       locale: "en_IN",
       ttl: 60 * 60 * 24,
     },
     twitter: {
       siteId: "1859480388193701888",
-      creator: `@${PERSONAL_DATA.twitter}`,
+      creator: `@${PERSONAL.twitter}`,
       creatorId: "1859480388193701888",
     },
   };
 }
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default async function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body
@@ -100,7 +101,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         >
           <Container>
             <Fade>
-              <DataProvider>{children}</DataProvider>
+              <DataProvider>
+                <TooltipProvider>{children}</TooltipProvider>
+              </DataProvider>
             </Fade>
           </Container>
           <OneKo />

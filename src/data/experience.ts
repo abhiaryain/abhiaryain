@@ -1,72 +1,37 @@
-import type { Icons } from "@/components/icons";
-import type { Tag } from "@/types";
+import type { Experience } from "@/types/experience";
 
-export type Experience = {
-  company: string;
-  /*
-    position: The full job title or role displayed across the site.
-    Example: Software Development Engineer
-  */
-  position: string;
-
-  /*
-    shortPosition: A shortened version of the position, used on smaller screens or compact layouts.
-    Example: SDE
-  */
-  shortPosition: string;
-  location: string;
-  startDate: string;
-  endDate: string;
-  url: string;
-  links: Tag[];
-  icon: Icons;
-  featured: boolean;
-};
-
-export const EXPERIENCE_DATA = [
+export const EXPERIENCES = [
   {
     company: "Vridhee",
     position: "Software Development Engineer",
-    shortPosition: "SDE",
+    label: "SDE",
     location: "Remote",
-    startDate: "May 2026",
-    endDate: "Present",
-    url: "https://mithilastack.com",
-    links: [
-      {
-        name: "Github",
-        icon: "github",
-        url: "https://github.com/mithilastack",
-      },
-    ],
-    icon: "mithila",
-    featured: true,
+    start: "May 2026",
+    end: "Present",
+    url: "https://vridhee.com",
+    links: [],
+    icon: "vridhee",
+    featured: false,
   },
   {
     company: "Mithila Stack",
     position: "Software Development Engineer",
-    shortPosition: "SDE",
+    label: "SDE",
     location: "Remote",
-    startDate: "Oct 2023",
-    endDate: "Sep 2024",
+    start: "Oct 2023",
+    end: "Sep 2024",
     url: "https://mithilastack.com",
-    links: [
-      {
-        name: "Github",
-        icon: "github",
-        url: "https://github.com/mithilastack",
-      },
-    ],
+    links: [],
     icon: "mithila",
-    featured: true,
+    featured: false,
   },
   {
     company: "Aaensa Tech",
     position: "Software Development Engineer Intern",
-    shortPosition: "SDE",
+    label: "SDE Intern",
     location: "Gurugram",
-    startDate: "Jun 2023",
-    endDate: "Sep 2023",
+    start: "Jun 2023",
+    end: "Sep 2023",
     url: "https://aaensa.com",
     links: [],
     icon: "aaensa",

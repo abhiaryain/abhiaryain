@@ -11,7 +11,7 @@ import {
   CardTitle,
 } from "@/components/abhiarya-ui/card";
 import { FadeItem } from "@/components/abhiarya-ui/fade";
-import type { PullRequest } from "@/types";
+import type { PullRequest } from "@/types/github/pull-request";
 
 export function PullRequestCard({
   title,

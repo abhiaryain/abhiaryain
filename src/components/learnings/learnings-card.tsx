@@ -10,7 +10,7 @@ import {
   CardTitle,
 } from "@/components/abhiarya-ui/card";
 import { FadeItem } from "@/components/abhiarya-ui/fade";
-import type { LEARNINGS } from "@/data/learnings";
+import type { Learning } from "@/types/learnings";
 
 export function LearningCard({
   title,
@@ -18,7 +18,7 @@ export function LearningCard({
   date,
   url,
   icon,
-}: LEARNINGS) {
+}: Learning) {
   return (
     <FadeItem>
       <Card>

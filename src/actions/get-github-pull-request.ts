@@ -1,12 +1,13 @@
 import "server-only";
 
-import { env } from "@/config/server-env";
-import { PERSONAL_DATA } from "@/data/personal";
-import type { ActionsReturn, Edges, PullRequest } from "@/types";
+import { request } from "@/actions/fetch";
+import { PERSONAL } from "@/data/personal";
+import type { ActionResult } from "@/types/github/api";
+import type { Edge, PullRequest } from "@/types/github/pull-request";
 
 const query = `
 query {
-  search(query: "is:pr author:${PERSONAL_DATA.github} archived:false is:merged -user:${PERSONAL_DATA.github}", type: ISSUE, first: 5) {
+  search(query: "is:pr author:${PERSONAL.github} archived:false is:merged -user:${PERSONAL.github}", type: ISSUE, first: 5) {
     edges {
       node {
         ... on PullRequest {
@@ -45,29 +46,22 @@ query {
 `;
 
 export async function getGithubPullRequest(): Promise<
-  ActionsReturn<PullRequest[]>
+  ActionResult<PullRequest[]>
 > {
-  const res = await fetch("https://api.github.com/graphql", {
-    cache: "force-cache",
-    next: { revalidate: 60 * 60 }, // 1 hours
-    method: "POST",
-    body: JSON.stringify({
-      query,
-    }),
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${env.GITHUB_TOKEN}`,
-    },
-  });
+  const res = await request(query);
 
   if (!res.ok) {
-    return { error: { message: "Unable to fetch GitHub pull requests." } };
+    return {
+      success: false,
+      error: { message: "Unable to fetch GitHub pull requests." },
+    };
   }
 
   const { data } = await res.json();
 
   if (!data?.search?.edges) {
     return {
+      success: false,
       error: {
         message: "GitHub response is missing expected data.",
       },
@@ -75,8 +69,8 @@ export async function getGithubPullRequest(): Promise<
   }
 
   const pullRequest: PullRequest[] = data.search.edges.map(
-    (edge: Edges) => edge.node,
+    (edge: Edge<PullRequest>) => edge.node,
   );
 
-  return { data: pullRequest };
+  return { success: true, data: pullRequest };
 }

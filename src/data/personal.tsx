@@ -1,43 +1,44 @@
-import type { JSX } from "react";
+// import type { JSX } from "react";
 import { TagList } from "@/components/tag-list/tag-list";
-import type { Tag } from "@/types";
+import type { Link } from "@/types/link";
+import type { Personal } from "@/types/personal";
 
-export type Address = {
-  state: string;
-  country: string;
-  url: string;
-};
+// export type Address = {
+//   state: string;
+//   country: string;
+//   url: string;
+// };
 
-export type Personal = {
-  name: string;
-  nickname: string;
-  title: string;
+// export type Personal = {
+//   name: string;
+//   nickname: string;
+//   title: string;
 
-  /*
-    avatar: The primary avatar image URL used throughout the site in AvatarComponents.
-    You can use either a local image from the `public` folder or an external image URL.
-    Example: https://avatars.githubusercontent.com/u/188953429?v=4
-  */
-  avatar: string;
+//   /*
+//     avatar: The primary avatar image URL used throughout the site in AvatarComponents.
+//     You can use either a local image from the `public` folder or an external image URL.
+//     Example: https://avatars.githubusercontent.com/u/188953429?v=4
+//   */
+//   avatar: string;
 
-  /*
-  image: A fallback image for AvatarComponents, displayed while the main avatar loads or if it fails to load.
-  This should be a lightweight and reliable image to ensure faster rendering.
-  You can use either a local image from the `public` folder or an external image URL.
-  Example: /avatar.webp
-*/
-  image: string;
-  portfolio: string;
-  github: string;
-  twitter: string;
-  linkedin: string;
-  phones: string[];
-  emails: string[];
-  bio: string;
-  summary: string;
-  about: JSX.Element;
-  address: Address;
-};
+//   /*
+//   image: A fallback image for AvatarComponents, displayed while the main avatar loads or if it fails to load.
+//   This should be a lightweight and reliable image to ensure faster rendering.
+//   You can use either a local image from the `public` folder or an external image URL.
+//   Example: /avatar.webp
+// */
+//   image: string;
+//   portfolio: string;
+//   github: string;
+//   twitter: string;
+//   linkedin: string;
+//   phones: string[];
+//   emails: string[];
+//   bio: string;
+//   summary: string;
+//   about: JSX.Element;
+//   address: Address;
+// };
 
 const tags = [
   {
@@ -75,7 +76,7 @@ const tags = [
     icon: "aws",
     url: "https://aws.amazon.com",
   },
-] as const satisfies readonly Tag[];
+] as const satisfies readonly Link[];
 
 const currentProjects = [
   {
@@ -83,7 +84,7 @@ const currentProjects = [
     icon: "currunt",
     url: "https://currunt.in",
   },
-] as const satisfies readonly Tag[];
+] as const satisfies readonly Link[];
 
 const learnings = [
   {
@@ -91,9 +92,9 @@ const learnings = [
     icon: "learnings",
     url: "https://learnings.abhiarya.in",
   },
-] as const satisfies readonly Tag[];
+] as const satisfies readonly Link[];
 
-export const PERSONAL_DATA = {
+export const PERSONAL = {
   name: "Abhishek Kumar",
   nickname: "Abhi Arya",
   title: "Software Engineer",

@@ -17,104 +17,104 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import type { ActionsReturn } from "@/types";
+import type { ActionResult } from "@/types/github/api";
 
 export function ActivityCalendarComponent({
   activities,
 }: {
-  activities: ActionsReturn<Activity[]>;
+  activities: ActionResult<Activity[]>;
 }) {
   const containerRef = useRef<HTMLDivElement>(null);
 
-  const { data, error } = activities;
+  const { success } = activities;
 
   useEffect(() => {
     const container = containerRef.current;
 
     if (!container) return;
-    container.children[0].scrollBy({
-      left: container.children[0].scrollWidth,
+    container.scrollBy({
+      left: container.scrollWidth,
       behavior: "smooth",
     });
-    container.children[0].setAttribute("tabindex", "-1");
   }, []);
 
-  return (
-    <FadeItem className="rounded-lg border-2 border-border p-4 md:rounded-none md:border-none md:p-0">
-      {error && (
+  if (!success) {
+    const { error } = activities;
+
+    return (
+      <FadeItem className="rounded-lg border-2 border-border p-4 md:rounded-none md:border-none md:p-0">
         <ErrorCard className="text-destructive">
           <WifiOff />
           <span>{error.message}</span>
         </ErrorCard>
-      )}
+      </FadeItem>
+    );
+  }
 
-      {data && data.length > 0 && (
-        <>
-          <div className="flex justify-center overflow-hidden">
-            <ContributionGraph
-              data={data}
-              blockSize={11}
-              fontSize={12}
-              blockMargin={2}
-              className="hover:none"
-            >
-              <ContributionGraphCalendar>
-                {({ activity, dayIndex, weekIndex }) => (
-                  <Tooltip>
-                    <TooltipTrigger
-                      render={
-                        <g>
-                          <ContributionGraphBlock
-                            activity={activity}
-                            dayIndex={dayIndex}
-                            weekIndex={weekIndex}
-                          />
-                        </g>
-                      }
-                    ></TooltipTrigger>
-                    <TooltipContent className="font-sans">
-                      <p>
-                        {activity.count} contribution
-                        {activity.count > 1 ? "s" : null} on{" "}
-                        {format(new Date(activity.date), "dd.MM.yyyy")}
-                      </p>
-                    </TooltipContent>
-                  </Tooltip>
-                )}
-              </ContributionGraphCalendar>
-              <ContributionGraphFooter>
-                <ContributionGraphTotalCount>
-                  {({ totalCount }) => (
-                    <div className="text-muted-foreground">
-                      {totalCount.toLocaleString("en")} contributions in last
-                      year
-                    </div>
-                  )}
-                </ContributionGraphTotalCount>
-                <ContributionGraphLegend />
-              </ContributionGraphFooter>
-            </ContributionGraph>
-          </div>
+  const { data } = activities;
 
-          <div className="mt-2 block text-center md:hidden">
-            <p className="text-muted-foreground text-xs">
-              ← Scroll to view older contributions
-            </p>
-          </div>
-        </>
-      )}
+  if (data.length === 0) {
+    return (
+      <ErrorCard className="text-muted-foreground">
+        <GitPullRequestCreateArrow />
+        <span>No contributions found...</span>
+      </ErrorCard>
+    );
+  }
 
-      {data && data.length === 0 && (
-        // <ErrorCard
-        //   message={"No contributions found..."}
-        //   icon={<GitPullRequestArrow className="size-5" />}
-        //   level="info"
-        // />
-        <ErrorCard className="text-muted-foreground">
-          <GitPullRequestCreateArrow />
-          <span>No contributions found...</span>
-        </ErrorCard>
-      )}
-    </FadeItem>
+  return (
+    <>
+      <div className="flex justify-center overflow-hidden">
+        <ContributionGraph
+          data={data}
+          blockSize={11}
+          fontSize={12}
+          blockMargin={2}
+          className="hover:none"
+          tabIndex={-1}
+        >
+          <ContributionGraphCalendar ref={containerRef}>
+            {({ activity, dayIndex, weekIndex }) => (
+              <Tooltip>
+                <TooltipTrigger
+                  render={
+                    <g>
+                      <ContributionGraphBlock
+                        activity={activity}
+                        dayIndex={dayIndex}
+                        weekIndex={weekIndex}
+                      />
+                    </g>
+                  }
+                ></TooltipTrigger>
+                <TooltipContent className="font-sans">
+                  <p>
+                    {activity.count} contribution
+                    {activity.count > 1 ? "s" : null} on{" "}
+                    {format(new Date(activity.date), "dd.MM.yyyy")}
+                  </p>
+                </TooltipContent>
+              </Tooltip>
+            )}
+          </ContributionGraphCalendar>
+          <ContributionGraphFooter>
+            <ContributionGraphTotalCount>
+              {({ totalCount }) => (
+                <div className="text-muted-foreground">
+                  {totalCount.toLocaleString("en")} contributions in last year
+                </div>
+              )}
+            </ContributionGraphTotalCount>
+            <ContributionGraphLegend />
+          </ContributionGraphFooter>
+        </ContributionGraph>
+      </div>
+
+      <div className="mt-2 block text-center md:hidden">
+        <p className="text-muted-foreground text-xs">
+          ← Scroll to view older contributions
+        </p>
+      </div>
+    </>
   );
 }

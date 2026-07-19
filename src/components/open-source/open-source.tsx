@@ -12,15 +12,16 @@ import {
 import type { Activity } from "@/components/kibo-ui/contribution-graph";
 import { ActivityCalendarComponent } from "@/components/open-source/activity-calendar";
 import { PullRequestComponent } from "@/components/open-source/pull-request";
-import { PERSONAL_DATA } from "@/data/personal";
-import type { ActionsReturn, PullRequest } from "@/types";
+import { PERSONAL } from "@/data/personal";
+import type { ActionResult } from "@/types/github/api";
+import type { PullRequest } from "@/types/github/pull-request";
 
 export function OpenSource({
   pullRequest,
   activities,
 }: {
-  pullRequest: ActionsReturn<PullRequest[]>;
-  activities: ActionsReturn<Activity[]>;
+  pullRequest: ActionResult<PullRequest[]>;
+  activities: ActionResult<Activity[]>;
 }) {
   return (
     <Section>
@@ -31,7 +32,7 @@ export function OpenSource({
         <FadeItem>
           <SectionTitle className="text-xs">
             <SectionLink
-              href={`https://github.com/pulls?q=is:pr+author:${PERSONAL_DATA.github}+archived:false+is:closed`}
+              href={`https://github.com/pulls?q=is:pr+author:${PERSONAL.github}+archived:false+is:closed`}
               onClick={() => track("see_all_open_source_pull_requests_clicked")}
             >
               See More
@@ -41,7 +42,9 @@ export function OpenSource({
         </FadeItem>
       </SectionHeader>
       <SectionContent className="gap-2">
-        <ActivityCalendarComponent activities={activities} />
+        <FadeItem className="rounded-lg border-2 border-border p-4 md:rounded-none md:border-none md:p-0">
+          <ActivityCalendarComponent activities={activities} />
+        </FadeItem>
         <PullRequestComponent pullRequest={pullRequest} />
       </SectionContent>
     </Section>

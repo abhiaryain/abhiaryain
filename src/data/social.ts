@@ -1,14 +1,6 @@
-import type { Icons } from "@/components/icons";
+import type { Social } from "@/types/social";
 
-export type Social = {
-  name: string;
-  url: string;
-  username: string;
-  icon: Icons;
-  withText: boolean;
-};
-
-export const SOCIAL_DATA = [
+export const SOCIALS = [
   {
     name: "career.abhiarya@gmail.com",
     url: "mailto:career.abhiarya@gmail.com",

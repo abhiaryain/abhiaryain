@@ -9,11 +9,16 @@ import {
   SectionLink,
   SectionTitle,
 } from "@/components/abhiarya-ui/section";
-import { useData } from "@/components/data-provider/data-provider";
 import { ProjectCard } from "@/components/projects/projects-card";
+import { useData } from "@/context/data-context";
 
 export function Projects() {
   const { projects } = useData();
+
+  const featuredProjects = projects.filter((projects) => projects.featured);
+
+  if (!featuredProjects.length) return null;
+
   return (
     <Section>
       <SectionHeader>

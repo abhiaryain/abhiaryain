@@ -1,13 +1,13 @@
 import { Fragment } from "react";
 import { Badges } from "@/components/tag-list/badges";
 import { cn } from "@/lib/utils";
-import type { Tag } from "@/types";
+import type { Link } from "@/types/link";
 
 export function TagList({
   tags,
   project = false,
 }: {
-  tags: readonly Tag[];
+  tags: readonly Link[];
   project?: boolean;
 }) {
   return (

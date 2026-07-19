@@ -11,15 +11,15 @@ import {
 } from "@/components/abhiarya-ui/card";
 import { FadeItem } from "@/components/abhiarya-ui/fade";
 import { icons } from "@/components/icons";
-import type { Experience } from "@/data/experience";
+import type { Experience } from "@/types/experience";
 
 export function ExperienceCard({
   company,
   position,
-  shortPosition,
+  label,
   location,
-  startDate,
-  endDate,
+  start,
+  end,
   url,
   links,
   icon,
@@ -64,9 +64,9 @@ export function ExperienceCard({
                 {position}
               </CardDescription>
               <CardDescription className="flex sm:hidden">
-                {shortPosition}
+                {label}
               </CardDescription>
-              <CardDescription className="whitespace-nowrap text-end font-mono text-xs">{`${startDate} - ${endDate}`}</CardDescription>
+              <CardDescription className="whitespace-nowrap text-end font-mono text-xs">{`${start} - ${end}`}</CardDescription>
             </CardLayer>
           </CardLayerGroup>
         </CardContent>

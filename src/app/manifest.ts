@@ -1,11 +1,11 @@
 import type { MetadataRoute } from "next";
-import { PERSONAL_DATA } from "@/data/personal";
+import { PERSONAL } from "@/data/personal";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: PERSONAL_DATA.nickname,
-    short_name: PERSONAL_DATA.nickname.split(" ")[0],
-    description: PERSONAL_DATA.summary,
+    name: PERSONAL.nickname,
+    short_name: PERSONAL.nickname.split(" ")[0],
+    description: PERSONAL.summary,
     start_url: "/",
     display: "standalone",
     background_color: "#0a0a0a",

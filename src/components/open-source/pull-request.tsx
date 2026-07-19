@@ -2,12 +2,13 @@ import { GitMerge, WifiOff } from "lucide-react";
 import { FadeItem } from "@/components/abhiarya-ui/fade";
 import { ErrorCard } from "@/components/error/error-card";
 import { PullRequestCard } from "@/components/open-source/pull-request-card";
-import type { ActionsReturn, PullRequest } from "@/types";
+import type { ActionResult } from "@/types/github/api";
+import type { PullRequest } from "@/types/github/pull-request";
 
 export function PullRequestComponent({
   pullRequest,
 }: {
-  pullRequest: ActionsReturn<PullRequest[]>;
+  pullRequest: ActionResult<PullRequest[]>;
 }) {
   const { data, error } = pullRequest;
 

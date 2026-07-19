@@ -1,6 +1,7 @@
 import type { NextConfig } from "next";
 import { validateEnv } from "@/config/server-env";
-import { SOCIAL_DATA } from "@/data/social";
+import { PROJECTS } from "@/data/projects";
+import { SOCIALS } from "@/data/social";
 
 validateEnv();
 
@@ -15,16 +16,21 @@ const nextConfig: NextConfig = {
     ],
   },
   redirects: () => {
-    return SOCIAL_DATA.filter((social) => social.name !== "Phone").map(
-      (social) => {
+    return [
+      ...SOCIALS.filter((social) => social.name !== "Phone").map((social) => {
         return {
           // Icons were used in the URL for better consistency.
           source: `/${social.icon.toLowerCase()}`,
           destination: social.url,
           permanent: true,
         };
-      },
-    );
+      }),
+      ...PROJECTS.map((project) => ({
+        source: `/${project.name.toLowerCase()}`,
+        destination: project.url,
+        permanent: true,
+      })),
+    ];
   },
 };
 

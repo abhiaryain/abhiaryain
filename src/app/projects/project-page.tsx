@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { FadeItem } from "@/components/abhiarya-ui/fade";
 import { Contact } from "@/components/contact/contact";
-import { useData } from "@/components/data-provider/data-provider";
 import { Footer } from "@/components/footer/footer";
 import { ProjectCard } from "@/components/projects/projects-card";
 import { ThemeSwitcherCompact } from "@/components/theme-switcher/theme-switcher-compact";
@@ -15,6 +14,7 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
+import { useData } from "@/context/data-context";
 import { cn } from "@/lib/utils";
 
 export function ProjectsPage() {

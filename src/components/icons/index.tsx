@@ -1,5 +1,13 @@
-import { Link2, LucideMail, LucidePhone, type LucideProps } from "lucide-react";
+import {
+  Link2,
+  type LucideIcon,
+  LucideMail,
+  LucidePhone,
+  type LucideProps,
+} from "lucide-react";
+import type { ReactElement } from "react";
 import { cn } from "@/lib/utils";
+import type { Icon } from "@/types/icon";
 
 // These icons are highly coupled with badges component.
 // Please use other icons if you need to use them in other places.
@@ -722,6 +730,8 @@ export const icons = {
     </svg>
   ),
   link: Link2,
-};
-
-export type Icons = keyof typeof icons;
+  vridhee: Link2,
+} as const satisfies Record<
+  Icon,
+  LucideIcon | ((props: LucideProps) => ReactElement)
+>;

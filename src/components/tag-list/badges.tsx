@@ -1,19 +1,19 @@
 "use client";
 
 import { track } from "@vercel/analytics";
-import Link from "next/link";
+import NextLink from "next/link";
 import type { ComponentProps } from "react";
 import { icons } from "@/components/icons";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
-import type { Tag } from "@/types";
+import type { Link } from "@/types/link";
 
 export function Badges({
   name,
   icon,
   url,
   className,
-}: Tag & ComponentProps<typeof Badge>) {
+}: Link & ComponentProps<typeof Badge>) {
   const Icon = icons[icon];
   return (
     <Badge
@@ -28,7 +28,7 @@ export function Badges({
         className,
       )}
     >
-      <Link
+      <NextLink
         href={url}
         target="_blank"
         rel="noopener"
@@ -36,7 +36,7 @@ export function Badges({
         onClick={() => track(`${name}_badge_clicked`)}
       >
         <Icon className="mr-0.5 size-3" /> {name}
-      </Link>
+      </NextLink>
     </Badge>
   );
 }

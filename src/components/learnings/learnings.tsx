@@ -9,11 +9,15 @@ import {
   SectionLink,
   SectionTitle,
 } from "@/components/abhiarya-ui/section";
-import { useData } from "@/components/data-provider/data-provider";
 import { LearningCard } from "@/components/learnings/learnings-card";
+import { useData } from "@/context/data-context";
 
 export function Learnings() {
   const { learnings } = useData();
+
+  const featuredLearnings = learnings.filter((learning) => learning.featured);
+  if (!featuredLearnings.length) return null;
+
   return (
     <Section>
       <SectionHeader>
@@ -33,7 +37,7 @@ export function Learnings() {
         </FadeItem>
       </SectionHeader>
       <SectionContent>
-        {learnings.map((learnings) => (
+        {featuredLearnings.map((learnings) => (
           <LearningCard
             key={learnings.title}
             title={learnings.title}
@@ -41,6 +45,7 @@ export function Learnings() {
             date={learnings.date}
             url={learnings.url}
             icon={learnings.icon}
+            featured={learnings.featured}
           />
         ))}
       </SectionContent>

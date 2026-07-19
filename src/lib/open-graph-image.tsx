@@ -1,10 +1,10 @@
 /** biome-ignore-all lint/performance/noImgElement: Not a Next.js component */
 
 import type { JSX } from "react";
-import { PERSONAL_DATA } from "@/data/personal";
-import { PROJECTS_DATA } from "@/data/projects";
+import { PERSONAL } from "@/data/personal";
+import { PROJECTS } from "@/data/projects";
 
-const projects = PROJECTS_DATA.map((project) => project.icon);
+const projects = PROJECTS.map((project) => project.icon);
 
 const icons: Record<(typeof projects)[number], JSX.Element> = {
   currunt: (
@@ -157,7 +157,7 @@ export const openGraphImages = (
             margin: 0,
           }}
         >
-          {PERSONAL_DATA.name}
+          {PERSONAL.name}
         </h1>
         <p
           style={{
@@ -168,7 +168,7 @@ export const openGraphImages = (
             color: "darkgray",
           }}
         >
-          {PERSONAL_DATA.title}
+          {PERSONAL.title}
         </p>
         <p
           style={{
@@ -179,7 +179,7 @@ export const openGraphImages = (
             marginTop: "1rem",
           }}
         >
-          {PERSONAL_DATA.bio}
+          {PERSONAL.bio}
         </p>
       </div>
       <div
@@ -190,7 +190,7 @@ export const openGraphImages = (
         }}
       >
         <img
-          src={PERSONAL_DATA.avatar}
+          src={PERSONAL.avatar}
           style={{
             height: "300px",
             width: "300px",
@@ -198,7 +198,7 @@ export const openGraphImages = (
             borderRadius: "2rem",
             alignSelf: "flex-end",
           }}
-          alt={PERSONAL_DATA.nickname}
+          alt={PERSONAL.nickname}
         ></img>
       </div>
     </div>

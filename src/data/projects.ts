@@ -1,17 +1,6 @@
-import type { Icons } from "@/components/icons";
-import type { Tag } from "@/types";
+import type { Project } from "@/types/project";
 
-export type Project = {
-  name: string;
-  description: string;
-  url: string;
-  icon: Icons;
-  links: Tag[];
-  tags: readonly Tag[];
-  featured: boolean;
-};
-
-export const PROJECTS_DATA = [
+export const PROJECTS = [
   {
     name: "Currunt",
     description:
@@ -37,7 +26,7 @@ export const PROJECTS_DATA = [
       { name: "hono", icon: "hono", url: "https://honojs.dev" },
       { name: "AI SDK", icon: "ai-sdk", url: "https://ai-sdk.dev" },
     ],
-    featured: true,
+    featured: false,
   },
   {
     name: "Learnings",
@@ -62,6 +51,6 @@ export const PROJECTS_DATA = [
       { name: "TailwindCSS", icon: "tailwind", url: "https://tailwindcss.com" },
       { name: "MDX", icon: "mdx", url: "https://mdxjs.com" },
     ],
-    featured: true,
+    featured: false,
   },
 ] as const satisfies readonly Project[];
