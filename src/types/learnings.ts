@@ -1,20 +1,20 @@
-import type { ExperienceDate } from "@/types/experience";
+import type { FormattedDate } from "@/types/date";
+import type { ExternalUrl } from "@/types/https-url";
 import type { Icon } from "@/types/icon";
-import type { ExternalUrl } from "@/types/url";
 
 /**
- * Represents a learning note or educational article displayed on the portfolio.
+ * Learning note, article, or educational resource showcased in the portfolio.
  */
 export type Learning = {
   /**
-   * Title of the learning article.
+   * Title of the learning resource.
    *
-   * @example "What is an Operating System?"
+   * @example "Understanding Redis Persistence"
    */
   readonly title: string;
 
   /**
-   * Brief summary shown in cards and listings.
+   * Short summary of the topic and key takeaways.
    */
   readonly description: string;
 
@@ -23,21 +23,24 @@ export type Learning = {
    *
    * @example "Oct 2023"
    */
-  readonly date: ExperienceDate;
+  readonly date: FormattedDate;
 
   /**
    * Canonical URL of the learning resource.
+   *
+   * @example "https://abhiarya.in/learnings/understanding-redis-persistence"
    */
   readonly url: ExternalUrl;
 
   /**
-   * Icon representing the learning topic.
+   * Icon associated with the learning topic.
+   *
+   * @example "redis"
    */
   readonly icon: Icon;
 
   /**
-   * Indicates whether the learning should receive
-   * additional visual emphasis in the UI.
+   * Whether this article is featured on the main page.
    */
   readonly featured: boolean;
 };

@@ -1,15 +1,7 @@
+import type { FormattedDate } from "@/types/date";
+import type { ExternalUrl } from "@/types/https-url";
 import type { Icon } from "@/types/icon";
 import type { Link } from "@/types/link";
-import type { Month } from "@/types/month";
-import type { Year } from "@/types/year";
-
-/**
- * Formatted experience date.
- *
- * @example "Oct 2023"
- */
-
-export type ExperienceDate = `${Month} ${Year}`;
 
 const WORK_LOCATIONS = [
   "Remote",
@@ -23,74 +15,96 @@ const WORK_LOCATIONS = [
   "San Francisco",
   "New York",
   "London",
-];
+] as const satisfies readonly string[];
 
 type KnownLocation = (typeof WORK_LOCATIONS)[number];
 
+/**
+ * Work location displayed for an experience.
+ *
+ * Includes common predefined locations while allowing
+ * custom values when needed.
+ */
 type WorkLocation = KnownLocation | (string & {});
 
 /**
- * Represents a single professional experience displayed on the portfolio.
+ * Professional experience showcased in the portfolio.
  */
 export type Experience = {
   /**
    * Company or organization name.
-   * @example "Mithila Stack"
+   *
+   * @example "Vridhee"
+   * @example "Google"
    */
   readonly company: string;
 
   /**
-   * Full job title displayed in standard layouts.
+   * Full job title.
+   *
    * @example "Software Development Engineer"
+   * @example "Full-Stack Developer"
    */
   readonly position: string;
 
   /**
-   * Abbreviated job title used in compact layouts where space is limited.
+   * Short title used in compact layouts.
+   *
    * @example "SDE"
+   * @example "SWE"
    */
-  readonly label: string;
+  readonly abbreviation: string;
 
   /**
    * Primary work location.
+   *
    * @example "Remote"
    * @example "Gurugram"
    */
   readonly location: WorkLocation;
 
   /**
-   * Employment start date formatted for display.
+   * Employment start date.
+   *
    * @example "Oct 2023"
    */
-  readonly start: ExperienceDate;
+  readonly start: FormattedDate;
 
   /**
-   * Employment end date formatted for display.
-   * Use "Present" for the current role.
+   * Employment end date.
+   *
+   * Use `"Present"` for the current role.
+   *
    * @example "Present"
    * @example "Sep 2024"
    */
-  readonly end: "Present" | ExperienceDate;
+  readonly end: "Present" | FormattedDate;
 
   /**
    * Official company or organization website.
+   *
+   * @example "https://google.com"
    */
-  readonly url: `https://${string}`;
+  readonly url: ExternalUrl;
 
   /**
-   * Related external links such as GitHub repositories,
-   * company pages, or project websites.
+   * Related resources associated with the role.
+   *
+   * Commonly includes company websites, project pages,
+   * repositories, articles, or presentations.
+   * @example [{ name: "Github",url: "https://github.com/google", icon: "github"}]
    */
   readonly links: readonly Link[];
 
   /**
-   * Icon identifier used to render the company's logo.
+   * Icon associated with the company or organization.
    */
   readonly icon: Icon;
 
   /**
-   * Indicates whether this experience should receive
-   * additional visual emphasis in the UI.
+   * Whether this experience is featured on the main page.
+   *
+   * @example true
    */
   readonly featured: boolean;
 };

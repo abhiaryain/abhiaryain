@@ -1,51 +1,73 @@
+import type { ExternalUrl } from "@/types/https-url";
 import type { Icon } from "@/types/icon";
 import type { Link } from "@/types/link";
-import type { ExternalUrl } from "@/types/url";
 
 /**
- * Represents a project showcased on the portfolio.
+ * Project showcased in the portfolio.
  */
 export type Project = {
   /**
-   * Project name.
+   * Display name of the project.
    *
-   * @example "Portfolio"
+   * @example "currunt"
    */
   readonly name: string;
 
   /**
-   * Brief summary describing the project's purpose and functionality.
+   * Short summary of the project's purpose, functionality,
+   * and key highlights.
+   *
+   * @example "An autonomous AI built for real-world tasks."
    */
   readonly description: string;
 
   /**
-   * Primary project URL.
+   * Primary URL for the project.
    *
-   * This is typically the live demo, project website, or repository.
+   * Typically a live application, project website, or repository.
+   *
+   * @example "https://currunt.in"
    */
   readonly url: ExternalUrl;
 
   /**
-   * Primary icon used to visually represent the project.
+   * Icon associated with the project.
+   *
+   * @example "currunt"
    */
   readonly icon: Icon;
 
   /**
-   * External resources associated with the project.
+   * Optional redirect path generated in `next.config.ts`.
    *
-   * Examples include source code repositories, live demos,
-   * documentation, and case studies.
+   * When provided, a redirect is created from /{@link slug}` to {@link url}.
+   *
+   *  For example, a slug of `"currunt"` enables:
+   * `https://abhiarya.in/currunt` → original {@link url}.
+   *
+   * @example "currunt"
+   */
+  readonly slug?: string;
+
+  /**
+   * Related project resources.
+   *
+   * Commonly includes source code repositories,
+   * documentation, articles, or case studies.
+   *
+   * @example [{ name: "Github", icon:"github" url: "https://github.com/abhiaryain/currunt" }]
    */
   readonly links: readonly Link[];
 
   /**
    * Technologies, frameworks, and tools used to build the project.
+   *
+   * @example [{ name: "TypeScript", icon: "typescript", url: "https://www.typescriptlang.org" }]
    */
-  readonly tags: readonly Link[];
+  readonly technologies: readonly Link[];
 
   /**
-   * Indicates whether the project should receive additional
-   * visual emphasis in the portfolio.
+   * Whether this article is featured on the main page.
    */
   readonly featured: boolean;
 };

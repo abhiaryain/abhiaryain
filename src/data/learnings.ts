@@ -1,11 +1,5 @@
 import type { Learning } from "@/types/learnings";
 
-/**
- * Learning resources displayed on the portfolio.
- *
- * Entries should be ordered in reverse chronological order
- * (most recent first).
- */
 export const LEARNINGS = [
   {
     title: "What is Operating System?",
@@ -14,6 +8,6 @@ export const LEARNINGS = [
     date: "Oct 2023",
     url: "https://learnings.abhiarya.in/what-is-operating-system",
     icon: "kafka",
-    featured: false,
+    featured: true,
   },
 ] as const satisfies readonly Learning[];

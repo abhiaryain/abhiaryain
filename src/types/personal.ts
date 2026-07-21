@@ -1,11 +1,11 @@
-import type { JSX } from "react";
-import type { ExternalUrl } from "@/types/url";
+import type { ExternalUrl } from "@/types/https-url";
 
 /**
- * Relative path to a static asset served from the application's `public`
- * directory.
+ * Relative path to a static asset served from the application's
+ * `public` directory.
  *
  * @example "/avatar.webp"
+ * @example "/images/profile.jpg"
  */
 export type RelativePath = `/${string}`;
 
@@ -19,11 +19,11 @@ export type RelativePath = `/${string}`;
 export type ImageSource = ExternalUrl | RelativePath;
 
 /**
- * Represents the author's primary location.
+ * Primary location associated with the portfolio owner.
  */
 export type Address = {
   /**
-   * State or province.
+   * State, province, or region.
    *
    * @example "Bihar"
    */
@@ -37,7 +37,7 @@ export type Address = {
   readonly country: string;
 
   /**
-   * Map or location URL.
+   * Public map or location URL.
    *
    * @example "https://maps.google.com/..."
    */
@@ -69,53 +69,71 @@ export type Personal = {
    * Primary professional title.
    *
    * @example "Software Development Engineer"
+   * @example "Full-Stack Developer"
    */
   readonly title: string;
 
   /**
    * Primary profile image.
    *
-   * Supports either a local image from the `public` directory
-   * or an external HTTPS image URL.
+   * Supports either:
+   * - A local asset from the `public` directory.
+   * - An external HTTPS URL.
+   *
+   * @example "/avatar.webp"
+   * @example "https://avatars.githubusercontent.com/u/302746395"
    */
   readonly avatar: ImageSource;
 
   /**
-   * Lightweight fallback image displayed while the primary avatar
-   * is loading or if it fails to load.
+   * Fallback image displayed while the avatar is loading
+   * or if the primary image cannot be loaded.
+   *
+   * @example "/avatar.webp"
    */
   readonly image: ImageSource;
 
   /**
-   * Portfolio website.
+   * Portfolio website URL.
+   *
+   * @example "https://abhiarya.in"
    */
   readonly portfolio: ExternalUrl;
 
   /**
-   * GitHub profile.
-   * This is used to fetch GitHub activity and pull requests.
+   * GitHub username.
+   *
+   * Used to fetch GitHub activity and pull requests.
    *
    * @example "abhiaryain"
    */
   readonly github: string;
 
   /**
-   * X (formerly Twitter) profile.
+   * X (formerly Twitter) username.
+   *
+   * @example "abhiaryain"
    */
   readonly twitter: string;
 
   /**
-   * LinkedIn profile.
+   * LinkedIn username or profile identifier.
+   *
+   * @example "abhiaryain"
    */
   readonly linkedin: string;
 
   /**
    * Contact phone numbers.
+   *
+   * @example ["+919546458806"]
    */
   readonly phones: readonly string[];
 
   /**
    * Contact email addresses.
+   *
+   * @example ["hello@abhiarya.in"]
    */
   readonly emails: readonly string[];
 
@@ -125,14 +143,9 @@ export type Personal = {
   readonly bio: string;
 
   /**
-   * Concise professional summary.
+   * Concise professional summary, used in previews and metadata
    */
   readonly summary: string;
-
-  /**
-   * Rich "About" content rendered directly in the application.
-   */
-  readonly about: JSX.Element;
 
   /**
    * Primary location.

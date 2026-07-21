@@ -36,9 +36,10 @@ const TECH_ICONS = [
 ] as const satisfies readonly string[];
 
 /**
- * Registry of icon identifiers available in the application.
+ * Registry of all icon identifiers available in the application.
  *
- * The values are used as keys to resolve icons dynamically.
+ * These values are used as lookup keys to dynamically resolve
+ * icon components throughout the portfolio.
  */
 const ICON_KEYS = [
   ...CONTACT_ICONS,

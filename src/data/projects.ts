@@ -3,10 +3,10 @@ import type { Project } from "@/types/project";
 export const PROJECTS = [
   {
     name: "Currunt",
-    description:
-      "A unified AI powerhouse for creation, design, and automation — transforming ideas into polished results within seconds.",
+    description: "The AI that works alongside you",
     url: "https://currunt.in",
     icon: "currunt",
+    slug: "currunt",
     links: [
       {
         name: "Github",
@@ -19,14 +19,14 @@ export const PROJECTS = [
         icon: "link",
       },
     ],
-    tags: [
+    technologies: [
       { name: "Next", icon: "next", url: "https://nextjs.org" },
       { name: "TailwindCSS", icon: "tailwind", url: "https://tailwindcss.com" },
       { name: "Bun", icon: "bun", url: "https://bun.sh" },
       { name: "hono", icon: "hono", url: "https://honojs.dev" },
       { name: "AI SDK", icon: "ai-sdk", url: "https://ai-sdk.dev" },
     ],
-    featured: false,
+    featured: true,
   },
   {
     name: "Learnings",
@@ -34,6 +34,7 @@ export const PROJECTS = [
       "Learnings is a collection of tutorials and blog posts, designed to capture my ongoing learning journey and share practical insights with others.",
     url: "https://learnings.abhiarya.in",
     icon: "learnings",
+    slug: "learnings",
     links: [
       {
         name: "Github",
@@ -46,11 +47,11 @@ export const PROJECTS = [
         icon: "link",
       },
     ],
-    tags: [
+    technologies: [
       { name: "Next", icon: "next", url: "https://nextjs.org" },
       { name: "TailwindCSS", icon: "tailwind", url: "https://tailwindcss.com" },
       { name: "MDX", icon: "mdx", url: "https://mdxjs.com" },
     ],
-    featured: false,
+    featured: true,
   },
 ] as const satisfies readonly Project[];

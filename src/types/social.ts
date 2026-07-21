@@ -1,52 +1,94 @@
+import type { ExternalUrl } from "@/types/https-url";
 import type { Icon } from "@/types/icon";
-import type { ExternalUrl } from "@/types/url";
 
+/**
+ * Email link using the `mailto:` URL scheme.
+ */
 export type EmailUrl = `mailto:${string}`;
+
+/**
+ * Telephone link using the `tel:` URL scheme.
+ */
 export type PhoneUrl = `tel:${string}`;
+
+/**
+ * Direct contact URL.
+ *
+ * Supports email and telephone links.
+ */
 export type ContactUrl = EmailUrl | PhoneUrl;
+
+/**
+ * URL supported by a social profile or contact entry.
+ *
+ * Supports external HTTPS URLs, email links, and telephone links.
+ */
 export type SocialUrl = ContactUrl | ExternalUrl;
 
 /**
- * Represents a social profile or contact method displayed on the portfolio.
+ * Social profile or contact method displayed throughout the portfolio.
  *
- * Entries may represent external profiles (GitHub, LinkedIn, X, etc.)
- * or direct contact methods such as email and phone.
+ * Supports external profiles (GitHub, LinkedIn, X, etc.) as well as
+ * direct contact methods such as email and phone.
  */
 export type Social = {
   /**
-   * Human-readable platform or contact name.
+   * Display name of the platform or contact method.
+   *
+   * Used for labels, tooltips, and accessibility text.
    *
    * @example "GitHub"
-   * @example "LinkedIn"
-   * @example "Phone"
    */
   readonly name: string;
 
   /**
-   * Destination URL.
+   * Destination URL for the profile or contact method.
    *
-   * Supports HTTPS links as well as `mailto:` and `tel:` URLs.
+   * Supports `https://`, `mailto:`, and `tel:` URLs.
+   *
+   * @example "https://github.com/abhiaryain"
+   * @example "mailto:career.abhiarya@gmail.com"
+   * @example "tel:+919546458806"
    */
   readonly url: SocialUrl;
 
   /**
-   * Username, handle, or contact value displayed alongside the icon.
+   * Public identifier displayed to users.
+   *
+   * This is typically a username, handle, email address, or phone number.
+   * used in seo metadata and contact information.
    *
    * @example "abhiaryain"
    * @example "+919546458806"
-   * @example "career@example.com"
+   * @example "career.abhiarya@gmail.com"
    */
   readonly username: string;
 
   /**
-   * Icon used to represent the platform or contact method.
+   * Icon associated with the platform or contact method.
+   *
+   * @example "github"
    */
   readonly icon: Icon;
 
   /**
-   * Controls whether the name should be rendered next to the icon.
+   * Optional redirect path generated in `next.config.ts`.
+   * When provided, a redirect is created from `/{@link slug}` to {@link url}.
    *
-   * When `false`, only the icon is displayed.
+   * Not all URL types support redirects. Contact links such as `tel:`
+   * should not define a slug.
+   *
+   * For example, a slug of `"github"` enables:
+   * `https://abhiarya.in/github` → original {@link url}.
+   *
+   * @example "github"
    */
-  readonly withText: boolean;
+  readonly slug?: string;
+
+  /**
+   * Whether the display name should be shown alongside the icon.
+   *
+   * When omitted or `false`, only the icon is rendered.
+   */
+  readonly showLabel?: boolean;
 };

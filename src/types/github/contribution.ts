@@ -1,19 +1,23 @@
 /**
- * Represents GitHub contributions for a single day.
+ * GitHub contribution activity for a single calendar day.
  */
 export type ContributionDay = {
   /**
-   * Contribution intensity color.
+   * Contribution intensity color provided by GitHub.
+   *
+   * @example "#39d353"
    */
   readonly color: string;
 
   /**
-   * Number of contributions made on the day.
+   * Number of contributions recorded on the day.
+   *
+   * @example 12
    */
   readonly contributionCount: number;
 
   /**
-   * ISO-8601 calendar date.
+   * Calendar date in ISO 8601 format (`YYYY-MM-DD`).
    *
    * @example "2026-07-19"
    */
@@ -21,11 +25,11 @@ export type ContributionDay = {
 };
 
 /**
- * Represents a week's worth of contribution activity.
+ * GitHub contribution activity for a single week.
  */
 export type ContributionWeek = {
   /**
-   * Daily contribution entries.
+   * Daily contribution entries for the week.
    */
   readonly contributionDays: readonly ContributionDay[];
 };
