@@ -1,12 +1,12 @@
-We prioritize security highly at [abhiaryain](https://abhiarya.in). If you discover any security vulnerabilities, please do not disclose them publicly.
+## Security
 
-Instead, we encourage you to take the following steps:
+Security is important to me. If you discover a security vulnerability in this portfolio or any of its associated services, please avoid disclosing it publicly.
 
-- If you are able to resolve the issue, please create a pull request (PR) with the fix.
+Instead, please choose one of the following:
 
-- Alternatively, you can reach out directly to the project maintainers by contacting me via
-  [X (formerly twitter)](https://x.com/abhiaryain) or [email](mailto:github.abhiarya@gmail.com).
+- **Report it privately:** Contact me directly via **[X (formerly twitter)](https://x.com/abhiaryain)** or **[email](mailto:github.abhiarya@gmail.com)** with the details so I can investigate and resolve the issue before any public disclosure.
+- **Submit a fix:** If you've identified the issue and have a solution, you're welcome to open a pull request with the proposed fix.
 
-Your contribution helps us ensure that the project remains secure and reliable for everyone.
+I appreciate responsible disclosure and will work to address confirmed vulnerabilities as quickly as possible.
 
-Thank you for your cooperation and attention to security!
+Thank you for helping keep this project secure.
