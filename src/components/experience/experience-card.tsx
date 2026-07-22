@@ -11,12 +11,13 @@ import {
 } from "@/components/abhiarya-ui/card";
 import { FadeItem } from "@/components/abhiarya-ui/fade";
 import { icons } from "@/components/icons";
+import { kebab } from "@/lib/kabab";
 import type { Experience } from "@/types/experience";
 
 export function ExperienceCard({
   company,
   position,
-  label,
+  abbreviation,
   location,
   start,
   end,
@@ -34,7 +35,7 @@ export function ExperienceCard({
               <CardTitle className="overflow-hidden">
                 <CardLink
                   href={url}
-                  onClick={() => track(`experience_${company}_clicked`)}
+                  onClick={() => track(`experience_${kebab(company)}_clicked`)}
                   className="truncate"
                 >
                   {company}
@@ -46,12 +47,14 @@ export function ExperienceCard({
                       key={link.name}
                       href={link.url}
                       onClick={() =>
-                        track(`experience_${company}_${link.name}_clicked`)
+                        track(
+                          `experience_${kebab(company)}_${kebab(link.name)}_clicked`,
+                        )
                       }
                     >
                       <Icon />
                       <span className="sr-only">
-                        {`${company.split(" ").join("_")}_${link.name}`}
+                        {`${kebab(company)}_${link.name}`}
                       </span>
                     </CardLink>
                   );
@@ -64,7 +67,7 @@ export function ExperienceCard({
                 {position}
               </CardDescription>
               <CardDescription className="flex sm:hidden">
-                {label}
+                {abbreviation}
               </CardDescription>
               <CardDescription className="whitespace-nowrap text-end font-mono text-xs">{`${start} - ${end}`}</CardDescription>
             </CardLayer>

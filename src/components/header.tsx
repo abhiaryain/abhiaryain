@@ -4,8 +4,8 @@ import { track } from "@vercel/analytics";
 import { MapPin } from "lucide-react";
 import Link from "next/link";
 import { FadeItem } from "@/components/abhiarya-ui/fade";
-import { AvatarComponent } from "@/components/avatar/avatar-component";
-import { Social } from "@/components/socials/social";
+import { AvatarComponent } from "@/components/avatar-component";
+import { Social } from "@/components/social";
 import { useData } from "@/context/data-context";
 import { cn } from "@/lib/utils";
 

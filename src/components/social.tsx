@@ -9,6 +9,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { useData } from "@/context/data-context";
+import { kebab } from "@/lib/kabab";
 import { cn } from "@/lib/utils";
 
 export function Social() {
@@ -35,16 +36,21 @@ export function Social() {
                     "whitespace-nowrap font-medium text-sm",
                     "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50",
                     "[&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0",
-                    social.withText ? "px-2 py-1.5" : "size-8",
+                    "showLabel" in social && social.showLabel
+                      ? "px-2"
+                      : "size-8",
                   )}
-                  onClick={() => track(`social_${social.name}_clicked`)}
+                  onClick={() => track(`social_${kebab(social.name)}_clicked`)}
                 >
                   <Icon
                     // Github icon is a bit smaller than the others so we need to make it a bit smaller
                     className={social.icon === "github" ? "size-5" : "size-4"}
                   />
                   <span
-                    className={cn("hidden", social.withText && "sm:inline")}
+                    className={cn(
+                      "hidden",
+                      "showLabel" in social && social.showLabel && "sm:inline",
+                    )}
                   >
                     {social.name}
                   </span>

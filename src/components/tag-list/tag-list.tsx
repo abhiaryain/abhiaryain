@@ -5,24 +5,15 @@ import type { Link } from "@/types/link";
 
 export function TagList({
   tags,
-  project = false,
 }: {
   tags: readonly Link[];
   project?: boolean;
 }) {
   return (
-    <span
-      className={cn(
-        "space-x-1.5 whitespace-pre-line",
-        project && "inline-flex flex-wrap gap-x-1.5 gap-y-1 space-x-0",
-      )}
-    >
+    <span className={cn("space-x-1.5 whitespace-pre-line")}>
       {tags.map((tag) => (
         <Fragment key={tag.name}>
-          <Badges
-            {...tag}
-            className={cn(project && "group-hover:saturate-100 sm:saturate-0")}
-          />
+          <Badges {...tag} />
         </Fragment>
       ))}
     </span>

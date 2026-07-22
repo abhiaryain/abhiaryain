@@ -1,10 +1,10 @@
 import { getGithubActivity } from "@/actions/get-github-activity";
 import { getGithubPullRequest } from "@/actions/get-github-pull-request";
-import { About } from "@/components/about/about";
-import { Contact } from "@/components/contact/contact";
+import { About } from "@/components/about";
+import { Contact } from "@/components/contact";
 import { Experience } from "@/components/experience/experience";
-import { Footer } from "@/components/footer/footer";
-import { Header } from "@/components/header/header";
+import { Footer } from "@/components/footer";
+import { Header } from "@/components/header";
 import { Learnings } from "@/components/learnings/learnings";
 import { OpenSource } from "@/components/open-source/open-source";
 import { Projects } from "@/components/projects/projects";

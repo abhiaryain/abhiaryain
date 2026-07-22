@@ -15,8 +15,9 @@ import { useData } from "@/context/data-context";
 export function Learnings() {
   const { learnings } = useData();
 
-  const featuredLearnings = learnings.filter((learning) => learning.featured);
-  if (!featuredLearnings.length) return null;
+  if (!learnings.filter((learning) => learning.featured).length) {
+    return null;
+  }
 
   return (
     <Section>
@@ -37,17 +38,11 @@ export function Learnings() {
         </FadeItem>
       </SectionHeader>
       <SectionContent>
-        {featuredLearnings.map((learnings) => (
-          <LearningCard
-            key={learnings.title}
-            title={learnings.title}
-            description={learnings.description}
-            date={learnings.date}
-            url={learnings.url}
-            icon={learnings.icon}
-            featured={learnings.featured}
-          />
-        ))}
+        {learnings
+          .filter((learning) => learning.featured)
+          .map((learnings) => (
+            <LearningCard key={learnings.title} {...learnings} />
+          ))}
       </SectionContent>
     </Section>
   );

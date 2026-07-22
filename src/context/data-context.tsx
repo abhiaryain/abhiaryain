@@ -1,12 +1,16 @@
 "use client";
+
 import { createContext, type ReactNode, useContext } from "react";
 import { EXPERIENCES } from "@/data/experience";
 import { LEARNINGS } from "@/data/learnings";
 import { PERSONAL } from "@/data/personal";
 import { PROJECTS } from "@/data/projects";
+import { SHIPPING } from "@/data/shipping";
+import { SKILLS } from "@/data/skills";
 import { SOCIALS } from "@/data/social";
+import { WRITES } from "@/data/writes";
 
-const DATA = {
+const value = {
   experiences: EXPERIENCES.toSorted((first, second) => {
     const firstEnd =
       first.end === "Present" ? Date.now() : new Date(first.end).getTime();
@@ -38,14 +42,17 @@ const DATA = {
   personal: PERSONAL,
   projects: PROJECTS,
   socials: SOCIALS,
+  skills: SKILLS,
+  shipping: SHIPPING,
+  writes: WRITES,
 };
 
-type DataContextType = typeof DATA;
+type DataContextType = typeof value;
 
 const DataContext = createContext<DataContextType | null>(null);
 
 export function DataProvider({ children }: { children: ReactNode }) {
-  return <DataContext.Provider value={DATA}>{children}</DataContext.Provider>;
+  return <DataContext.Provider value={value}>{children}</DataContext.Provider>;
 }
 
 export function useData() {

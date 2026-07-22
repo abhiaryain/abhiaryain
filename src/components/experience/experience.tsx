@@ -15,11 +15,9 @@ import { useData } from "@/context/data-context";
 export function Experience() {
   const { experiences, personal, socials } = useData();
 
-  const featuredExperiences = experiences.filter(
-    (experience) => experience.featured,
-  );
-
-  if (!featuredExperiences.length) return null;
+  if (!experiences.filter((experience) => experience.featured).length) {
+    return null;
+  }
 
   return (
     <Section>
@@ -50,19 +48,7 @@ export function Experience() {
         {experiences
           .filter((experience) => experience.featured)
           .map((experience) => (
-            <ExperienceCard
-              key={experience.company}
-              company={experience.company}
-              position={experience.position}
-              label={experience.label}
-              location={experience.location}
-              start={experience.start}
-              end={experience.end}
-              url={experience.url}
-              links={experience.links}
-              icon={experience.icon}
-              featured={experience.featured}
-            />
+            <ExperienceCard key={experience.company} {...experience} />
           ))}
       </SectionContent>
     </Section>

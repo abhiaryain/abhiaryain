@@ -5,7 +5,7 @@ import {
   SectionHeader,
   SectionTitle,
 } from "@/components/abhiarya-ui/section";
-import { Social } from "@/components/socials/social";
+import { Social } from "@/components/social";
 
 export function Contact() {
   return (

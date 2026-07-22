@@ -1,4 +1,3 @@
-/** biome-ignore-all lint/suspicious/noArrayIndexKey: TODO: Fix this */
 "use client";
 
 import type { Day as WeekDay } from "date-fns";
@@ -15,7 +14,6 @@ import {
 } from "date-fns";
 import {
   type ComponentProps,
-  ComponentPropsWithoutRef,
   type ComponentPropsWithRef,
   type CSSProperties,
   createContext,
@@ -25,12 +23,6 @@ import {
   useContext,
   useMemo,
 } from "react";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
-import { getContribution } from "@/lib/get-contribution";
 import { cn } from "@/lib/utils";
 
 export type Activity = {
@@ -499,38 +491,31 @@ export const ContributionGraphLegend = ({
       </span>
       {new Array(maxLevel + 1).fill(undefined).map((_, level) =>
         children ? (
-          <Fragment key={level}>{children({ level })}</Fragment>
+          <Fragment key={level.toString()}>{children({ level })}</Fragment>
         ) : (
-          <Tooltip key={level}>
-            <TooltipTrigger
-              render={
-                <svg
-                  height={blockSize}
-                  key={level}
-                  width={blockSize}
-                  aria-label="Github"
-                  role="img"
-                >
-                  <rect
-                    className={cn(
-                      "stroke-[1px] stroke-border",
-                      'data-[level="0"]:fill-muted',
-                      'data-[level="1"]:fill-muted-foreground/20',
-                      'data-[level="2"]:fill-muted-foreground/40',
-                      'data-[level="3"]:fill-muted-foreground/60',
-                      'data-[level="4"]:fill-muted-foreground/80',
-                    )}
-                    data-level={level}
-                    height={blockSize}
-                    rx={blockRadius}
-                    ry={blockRadius}
-                    width={blockSize}
-                  />
-                </svg>
-              }
+          <svg
+            height={blockSize}
+            key={level.toString()}
+            width={blockSize}
+            aria-label="Github"
+            role="img"
+          >
+            <rect
+              className={cn(
+                "stroke-[1px] stroke-border",
+                'data-[level="0"]:fill-muted',
+                'data-[level="1"]:fill-muted-foreground/20',
+                'data-[level="2"]:fill-muted-foreground/40',
+                'data-[level="3"]:fill-muted-foreground/60',
+                'data-[level="4"]:fill-muted-foreground/80',
+              )}
+              data-level={level}
+              height={blockSize}
+              rx={blockRadius}
+              ry={blockRadius}
+              width={blockSize}
             />
-            <TooltipContent> {getContribution(level)}</TooltipContent>
-          </Tooltip>
+          </svg>
         ),
       )}
       <span className="ml-1 text-muted-foreground">

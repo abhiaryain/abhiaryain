@@ -22,22 +22,6 @@ export function Card({ children, className, ...props }: ComponentProps<"div">) {
   );
 }
 
-// export function CardHeader({
-//   children,
-//   className,
-//   ...props
-// }: ComponentProps<"div">) {
-//   return (
-//     <div
-//       data-slot="card-header"
-//       className={cn("flex flex-col gap-2", className)}
-//       {...props}
-//     >
-//       {children}
-//     </div>
-//   );
-// }
-
 export function CardContent({
   children,
   className,

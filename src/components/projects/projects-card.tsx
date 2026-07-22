@@ -14,7 +14,8 @@ import {
 } from "@/components/abhiarya-ui/card";
 import { FadeItem } from "@/components/abhiarya-ui/fade";
 import { icons } from "@/components/icons";
-import { TagList } from "@/components/tag-list/tag-list";
+import { Badges } from "@/components/tag-list/badges";
+import { kebab } from "@/lib/kabab";
 import type { Project } from "@/types/project";
 
 export function ProjectCard({
@@ -23,7 +24,7 @@ export function ProjectCard({
   url,
   icon,
   links,
-  tags,
+  technologies,
 }: Project) {
   return (
     <FadeItem>
@@ -38,7 +39,7 @@ export function ProjectCard({
               <CardTitle className="overflow-hidden">
                 <CardLink
                   href={url}
-                  onClick={() => track(`project_${name}_clicked`)}
+                  onClick={() => track(`project_${kebab(name)}_clicked`)}
                   className="truncate"
                 >
                   {name}
@@ -51,11 +52,11 @@ export function ProjectCard({
                     <CardLink
                       key={link.name}
                       href={link.url}
-                      onClick={() => track(`project_${name}_clicked`)}
+                      onClick={() => track(`project_${kebab(name)}_clicked`)}
                     >
                       <Icon />
                       <span className="sr-only">
-                        {`${name.split(" ").join("_")}_${link.name}`}
+                        {`${kebab(name)}_${link.name}`}
                       </span>
                     </CardLink>
                   );
@@ -70,7 +71,15 @@ export function ProjectCard({
           </CardLayerGroup>
         </CardContent>
         <CardFooter className="p-2">
-          <TagList tags={tags} project />
+          <span
+            className={
+              "whitespace-pre-line inline-flex flex-wrap gap-x-1.5 gap-y-1 space-x-0"
+            }
+          >
+            {technologies.map((technology) => (
+              <Badges key={technology.name} {...technology} />
+            ))}
+          </span>
         </CardFooter>
       </Card>
     </FadeItem>

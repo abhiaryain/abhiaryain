@@ -13,7 +13,7 @@ export function AvatarComponent() {
         src={personal.avatar}
         alt={personal.nickname}
         className="rounded-2xl"
-      ></AvatarImage>
+      />
       <AvatarFallback>
         {/* Image as a fallback because Image component support optimizations, caching and blur-hash */}
         <Image

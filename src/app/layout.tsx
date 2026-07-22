@@ -5,9 +5,9 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Fade } from "@/components/abhiarya-ui/fade";
-import { Container } from "@/components/container/container";
-import { OneKo } from "@/components/oneko/oneko";
-import { ThemeProvider } from "@/components/theme-provider/theme-provider";
+import { Container } from "@/components/container";
+import { OneKo } from "@/components/oneko";
+import { ThemeProvider } from "@/components/theme-provider";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { DataProvider } from "@/context/data-context";
 import { EXPERIENCES } from "@/data/experience";
@@ -57,7 +57,7 @@ export async function generateMetadata(): Promise<Metadata> {
         ...PERSONAL.emails,
         ...EXPERIENCES.map((experience) => experience.company),
         ...EXPERIENCES.map((experience) => experience.position),
-        ...EXPERIENCES.map((experience) => experience.label),
+        ...EXPERIENCES.map((experience) => experience.abbreviation),
         ...SOCIALS.map((social) => social.username),
         ...PROJECTS.map((project) => project.name),
       ]),
@@ -99,13 +99,13 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
           enableSystem
           disableTransitionOnChange
         >
-          <Container>
-            <Fade>
-              <DataProvider>
+          <DataProvider>
+            <Container>
+              <Fade>
                 <TooltipProvider>{children}</TooltipProvider>
-              </DataProvider>
-            </Fade>
-          </Container>
+              </Fade>
+            </Container>
+          </DataProvider>
           <OneKo />
         </ThemeProvider>
         <Analytics />

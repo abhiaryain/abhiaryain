@@ -1,8 +1,6 @@
 import { format } from "date-fns";
 import { GitPullRequestCreateArrow, WifiOff } from "lucide-react";
 import { useEffect, useRef } from "react";
-import { FadeItem } from "@/components/abhiarya-ui/fade";
-import { ErrorCard } from "@/components/error/error-card";
 import {
   type Activity,
   ContributionGraph,
@@ -12,6 +10,7 @@ import {
   ContributionGraphLegend,
   ContributionGraphTotalCount,
 } from "@/components/kibo-ui/contribution-graph";
+import { ErrorCard } from "@/components/open-source/error-card";
 import {
   Tooltip,
   TooltipContent,
@@ -42,12 +41,10 @@ export function ActivityCalendarComponent({
     const { error } = activities;
 
     return (
-      <FadeItem className="rounded-lg border-2 border-border p-4 md:rounded-none md:border-none md:p-0">
-        <ErrorCard className="text-destructive">
-          <WifiOff />
-          <span>{error.message}</span>
-        </ErrorCard>
-      </FadeItem>
+      <ErrorCard className="text-destructive">
+        <WifiOff />
+        <span>{error.message}</span>
+      </ErrorCard>
     );
   }
 
@@ -101,7 +98,8 @@ export function ActivityCalendarComponent({
             <ContributionGraphTotalCount>
               {({ totalCount }) => (
                 <div className="text-muted-foreground">
-                  {totalCount.toLocaleString("en")} contributions in last year
+                  {`${totalCount.toLocaleString("en")} contributions`}
+                  <span className="hidden  sm:inline"> in last year</span>
                 </div>
               )}
             </ContributionGraphTotalCount>

@@ -2,7 +2,7 @@
  * Defines and validates the application's environment variables.
  *
  * This module centralizes the environment schema using `@t3-oss/env-nextjs`
- * and `Zod`, providing a single, type-safe source of truth for configuration.
+ * and `zod`, providing a single, type-safe source of truth for configuration.
  *
  * Exports:
  * - `env` – The validated, type-safe environment object for use throughout

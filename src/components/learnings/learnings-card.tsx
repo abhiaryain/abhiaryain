@@ -10,6 +10,7 @@ import {
   CardTitle,
 } from "@/components/abhiarya-ui/card";
 import { FadeItem } from "@/components/abhiarya-ui/fade";
+import { kebab } from "@/lib/kabab";
 import type { Learning } from "@/types/learnings";
 
 export function LearningCard({
@@ -32,9 +33,7 @@ export function LearningCard({
               <CardTitle className="overflow-hidden">
                 <CardLink
                   href={url}
-                  onClick={() =>
-                    track(`learnings_${title.split(" ").join("_")}_clicked`)
-                  }
+                  onClick={() => track(`learnings_${kebab(title)}_clicked`)}
                   className="truncate"
                 >
                   {title}

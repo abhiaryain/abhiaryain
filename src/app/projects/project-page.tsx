@@ -2,8 +2,8 @@
 
 import Link from "next/link";
 import { FadeItem } from "@/components/abhiarya-ui/fade";
-import { Contact } from "@/components/contact/contact";
-import { Footer } from "@/components/footer/footer";
+import { Contact } from "@/components/contact";
+import { Footer } from "@/components/footer";
 import { ProjectCard } from "@/components/projects/projects-card";
 import { ThemeSwitcherCompact } from "@/components/theme-switcher/theme-switcher-compact";
 import {
@@ -26,17 +26,19 @@ export function ProjectsPage() {
         <Breadcrumb>
           <BreadcrumbList>
             <BreadcrumbItem>
-              <BreadcrumbLink>
-                <Link
-                  className={cn(
-                    "rounded-xs",
-                    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
-                  )}
-                  href="/"
-                >
-                  Home
-                </Link>
-              </BreadcrumbLink>
+              <BreadcrumbLink
+                render={
+                  <Link
+                    className={cn(
+                      "rounded-xs bg-background",
+                      "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
+                    )}
+                    href="/"
+                  >
+                    Home
+                  </Link>
+                }
+              />
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
@@ -54,16 +56,7 @@ export function ProjectsPage() {
         </FadeItem>
         <div className="space-y-3 py-4">
           {projects.map((project) => (
-            <ProjectCard
-              key={project.name}
-              name={project.name}
-              description={project.description}
-              url={project.url}
-              icon={project.icon}
-              links={project.links}
-              tags={project.tags}
-              featured={project.featured}
-            />
+            <ProjectCard key={project.name} {...project} />
           ))}
         </div>
         <Contact />

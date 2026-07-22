@@ -11,6 +11,7 @@ import {
   CardTitle,
 } from "@/components/abhiarya-ui/card";
 import { FadeItem } from "@/components/abhiarya-ui/fade";
+import { kebab } from "@/lib/kabab";
 import type { PullRequest } from "@/types/github/pull-request";
 
 export function PullRequestCard({
@@ -35,7 +36,9 @@ export function PullRequestCard({
                   target="_blank"
                   rel="noopener"
                   className="truncate"
-                  onClick={() => track(`open_source_pr_${title}_clicked`)}
+                  onClick={() =>
+                    track(`open_source_pr_${kebab(title)}_clicked`)
+                  }
                 >
                   {title}
                 </CardLink>
