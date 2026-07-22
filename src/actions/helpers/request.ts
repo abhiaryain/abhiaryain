@@ -5,7 +5,7 @@ import { env } from "@/config/server-env";
 export async function request(query: string) {
   return fetch("https://api.github.com/graphql", {
     cache: "force-cache",
-    next: { revalidate: 60 * 10 }, // 10 minutes
+    next: { revalidate: 60 * 30 }, // 30 minutes
     method: "POST",
     body: JSON.stringify({
       query,

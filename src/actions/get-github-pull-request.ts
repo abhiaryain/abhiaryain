@@ -1,6 +1,6 @@
 import "server-only";
 
-import { request } from "@/actions/fetch";
+import { request } from "@/actions/helpers/request";
 import { PERSONAL } from "@/data/personal";
 import type { ActionResult } from "@/types/github/api";
 import type { Edge, PullRequest } from "@/types/github/pull-request";

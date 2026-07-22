@@ -1,6 +1,6 @@
 import "server-only";
 
-import { request } from "@/actions/fetch";
+import { request } from "@/actions/helpers/request";
 import type { Activity } from "@/components/kibo-ui/contribution-graph";
 import { PERSONAL } from "@/data/personal";
 import type { ActionResult } from "@/types/github/api";
@@ -27,7 +27,7 @@ query {
 
 function getLevel(count: number) {
   if (count === 0) return 0;
-  if (count <= 3) return 1;
+  if (count <= 1) return 1;
   if (count <= 5) return 2;
   if (count <= 8) return 3;
   return 4;

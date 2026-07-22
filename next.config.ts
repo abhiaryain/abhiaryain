@@ -17,16 +17,15 @@ const nextConfig: NextConfig = {
   },
   redirects: () => {
     return [
-      ...SOCIALS.filter((social) => social.name !== "Phone").map((social) => {
-        return {
-          // Icons were used in the URL for better consistency.
-          source: `/${social.icon.toLowerCase()}`,
+      ...SOCIALS.filter((social) => "slug" in social)
+        .filter((social) => !social.url.startsWith("tel:"))
+        .map((social) => ({
+          source: `/${social.slug.toLowerCase()}`,
           destination: social.url,
           permanent: true,
-        };
-      }),
-      ...PROJECTS.map((project) => ({
-        source: `/${project.name.toLowerCase()}`,
+        })),
+      ...PROJECTS.filter((project) => "slug" in project).map((project) => ({
+        source: `/${project.slug.toLowerCase()}`,
         destination: project.url,
         permanent: true,
       })),
