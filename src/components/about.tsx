@@ -23,11 +23,16 @@ export function About() {
       <SectionContent>
         <FadeItem>
           <span className="font-mono text-muted-foreground text-sm leading-6">
-            I&apos;m a software engineer experienced in building scalable
-            backend systems using <TagList tags={skills} /> and more. Currently,
-            I&apos;m building <TagList tags={shipping} /> while contributing to
-            open-source projects. When I&apos;m not writing code, you&apos;ll
-            find me writing articles about my <TagList tags={writes} />
+            {
+              "I'm a software engineer experienced in building scalable backend systems using "
+            }
+            <TagList tags={skills} />
+            {" and more. Currently, I'm building "}
+            <TagList tags={shipping} />
+            {
+              " while contributing to open-source projects. When I'm not writing code, you'll find me writing articles about my "
+            }
+            <TagList tags={writes} />
           </span>
         </FadeItem>
       </SectionContent>

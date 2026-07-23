@@ -24,7 +24,7 @@ export function Badges({
         "bg-accent/50 hover:bg-accent",
         "rounded-sm transition-[background]",
         "border-muted-foreground border-dashed [&>svg]:size-3",
-        "focus-visible:border-transparent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50 o",
+        "focus-visible:border-transparent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50",
         className,
       )}
     >
