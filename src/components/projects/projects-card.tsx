@@ -30,10 +30,7 @@ export function ProjectCard({
     <FadeItem>
       <Card>
         <CardContent>
-          <CardIcon
-            icon={icon}
-            className="mt-1 size-10 text-muted-foreground"
-          />
+          <CardIcon icon={icon} className="mt-1 size-10" />
           <CardLayerGroup>
             <CardLayer>
               <CardTitle className="overflow-hidden">
@@ -77,7 +74,11 @@ export function ProjectCard({
             }
           >
             {technologies.map((technology) => (
-              <Badges key={technology.name} {...technology} />
+              <Badges
+                key={technology.name}
+                className="group-hover:saturate-100 sm:saturate-0"
+                {...technology}
+              />
             ))}
           </span>
         </CardFooter>

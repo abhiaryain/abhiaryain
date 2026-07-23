@@ -44,7 +44,11 @@ function TagList({ tags }: { tags: readonly Link[]; project?: boolean }) {
   return (
     <span className="space-x-1.5 whitespace-pre-line">
       {tags.map((tag) => (
-        <Badges key={tag.name} {...tag} />
+        <Badges
+          key={tag.name}
+          className="hover:saturate-100 sm:saturate-0"
+          {...tag}
+        />
       ))}
     </span>
   );

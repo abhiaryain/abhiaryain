@@ -35,6 +35,6 @@ export const EXPERIENCES = [
     url: "https://aaensa.com",
     links: [],
     icon: "aaensa",
-    featured: true,
+    featured: false,
   },
 ] as const satisfies readonly Experience[];
