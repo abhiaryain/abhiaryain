@@ -54,7 +54,7 @@ export function ExperienceCard({
                     >
                       <Icon />
                       <span className="sr-only">
-                        {`${kebab(company)}_${link.name}`}
+                        {`${kebab(company)}_${kebab(link.name)}`}
                       </span>
                     </CardLink>
                   );

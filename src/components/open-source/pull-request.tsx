@@ -41,22 +41,7 @@ export function PullRequestComponent({
     <>
       {data.map((pr) => (
         <FadeItem key={pr.id}>
-          <PullRequestCard
-            id={pr.id}
-            title={pr.title}
-            url={pr.url}
-            createdAt={pr.createdAt}
-            state={pr.state}
-            deletions={pr.deletions}
-            additions={pr.additions}
-            number={pr.number}
-            commits={pr.commits}
-            changedFiles={pr.changedFiles}
-            closedAt={pr.closedAt}
-            mergedAt={pr.mergedAt}
-            author={pr.author}
-            repository={pr.repository}
-          />
+          <PullRequestCard {...pr} />
         </FadeItem>
       ))}
     </>

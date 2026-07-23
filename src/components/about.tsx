@@ -7,8 +7,9 @@ import {
   SectionHeader,
   SectionTitle,
 } from "@/components/abhiarya-ui/section";
-import { TagList } from "@/components/tag-list/tag-list";
+import { Badges } from "@/components/badges";
 import { useData } from "@/context/data-context";
+import type { Link } from "@/types/link";
 
 export function About() {
   const { skills, writes, shipping } = useData();
@@ -31,5 +32,15 @@ export function About() {
         </FadeItem>
       </SectionContent>
     </Section>
+  );
+}
+
+function TagList({ tags }: { tags: readonly Link[]; project?: boolean }) {
+  return (
+    <span className="space-x-1.5 whitespace-pre-line">
+      {tags.map((tag) => (
+        <Badges key={tag.name} {...tag} />
+      ))}
+    </span>
   );
 }

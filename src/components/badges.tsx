@@ -20,7 +20,6 @@ export function Badges({
     <Badge
       variant={"outline"}
       className={cn(
-        "group",
         "text-muted-foreground",
         "bg-accent/50 hover:bg-accent",
         "rounded-sm transition-[background]",

@@ -387,7 +387,7 @@ export const ContributionGraphCalendar = ({
       <svg
         aria-label="Contribution Graph"
         role="img"
-        className="block overflow-visible [&>title]:pointer-events-none"
+        className="block overflow-visible [&>title]:pointer-events-none mb-2 mb:mb-0"
         height={height}
         viewBox={`0 0 ${width} ${height}`}
         width={width}

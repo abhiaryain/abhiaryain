@@ -13,8 +13,8 @@ import {
   CardTitle,
 } from "@/components/abhiarya-ui/card";
 import { FadeItem } from "@/components/abhiarya-ui/fade";
+import { Badges } from "@/components/badges";
 import { icons } from "@/components/icons";
-import { Badges } from "@/components/tag-list/badges";
 import { kebab } from "@/lib/kabab";
 import type { Project } from "@/types/project";
 
@@ -56,7 +56,7 @@ export function ProjectCard({
                     >
                       <Icon />
                       <span className="sr-only">
-                        {`${kebab(name)}_${link.name}`}
+                        {`${kebab(name)}_${kebab(link.name)}`}
                       </span>
                     </CardLink>
                   );
