@@ -21,6 +21,7 @@ export const env = createEnv({
       .string({
         message: "Environment variable GITHUB_TOKEN must be a string.",
       })
+      .trim()
       .min(1, {
         message:
           "GITHUB_TOKEN is required and cannot be empty. Please provide a valid GitHub token.",
