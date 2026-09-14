@@ -1,21 +1,31 @@
-# shadcn/ui monorepo template
+## Hi <img src="./public/wave.gif" height="20px" /> Welcome to [Abhishek Kumar's](https://abhiarya.in) GitHub!
 
-This is a Next.js monorepo template with shadcn/ui.
+I&apos;m a software engineer experienced in building scalable backend systems with
+[![Typescript](https://img.shields.io/badge/-TypeScript-3178c6?logo=typescript&logoColor=white)](https://www.typescriptlang.org)
+[![Node.js](https://img.shields.io/badge/-Node.js-3F8B3D?logo=node.js&logoColor=white)](https://nodejs.org)
+[![Redis](https://img.shields.io/badge/-Redis-FF4438?logo=redis&logoColor=white)](https://redis.io)
+[![Kafka](https://img.shields.io/badge/-Kafka-231F20?logo=apache-kafka&logoColor=white)](https://kafka.apache.org)
+[![Docker](https://img.shields.io/badge/-Docker-white?logo=docker&logoColor=2496ED)](https://www.docker.com)
+[![AWS](https://custom-icon-badges.demolab.com/badge/AWS-ffffff?logo=aws&logoColor=FF9900)](https://aws.amazon.com)
+and more.
 
-## Adding components
+<!--
+Currently, I&apos;m building [Currunt](https://currunt.in), and exploring every node in the technology graph, using DFS or BFS as needed — you can track my visited nodes under [learnings](https://learnings.abhiarya.in).
+-->
 
-To add components to your app, run the following command at the root of your `web` app:
+Always excited when my PRs get merged! 😄
 
-```bash
-pnpm dlx shadcn@latest add button -c apps/web
-```
+[More about me &rarr;](https://abhiarya.in)
 
-This will place the ui components in the `packages/ui/src/components` directory.
+<!-- ### Open Source Projects -->
 
-## Using components
+### Personal Projects
 
-To use the components in your app, import them from the `ui` package.
+- 🏃🏻‍➡️ **[Portfolio](https://abhiarya.in)** - A journey of continuous improvement.
 
-```tsx
-import { Button } from "@workspace/ui/components/button";
-```
+<!--
+| **PROJECTS** | **REPOSITORIES** |
+|:---------------:|:---------------:|
+| 🏃🏻‍➡️ **[Portfolio](https://abhiarya.in)** | [Code](https://github.com/abhiaryain/abhiaryain) |
+| <img src="https://github-readme-stats.vercel.app/api?username=abhiaryain&include_all_commits=true&show_icons=true&rank_icon=percentile&border_radius=20&show=reviews,discussions_started,discussions_answered,prs_merged,prs_merged_percentage" /> | <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=abhiaryain&layout=donut-vertical&border_radius=20&langs_count=2&size_weight=0.5&count_weight=0.5" /> |
+-->
